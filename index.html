@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="《离散事件系统建模仿真及 GPSS World 教程》指定课后习题原题、建模思路、完整程序与报告取数说明。">
+  <meta name="description" content="GPSS World 第3、4、5章指定课后习题：教材原题、建模思路、完整程序与报告取数说明。">
   <meta name="theme-color" content="#123f57">
-  <title>GPSS World 课后习题：第3章、5.4、5.7 完整详解</title>
+  <title>GPSS World 第3、4、5章指定课后习题完整详解</title>
   <style>
     :root{--ink:#172029;--muted:#63707b;--paper:#f1eee5;--blue:#123f57;--cyan:#0a7c86;--orange:#e27032;--yellow:#f2bd48;--red:#a53c32;--line:rgba(18,63,87,.19);--code:#111d24;--codeink:#d9e7e4;--panel:rgba(255,255,255,.58)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:linear-gradient(90deg,rgba(18,63,87,.035) 1px,transparent 1px),linear-gradient(rgba(18,63,87,.035) 1px,transparent 1px),var(--paper);background-size:24px 24px;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;line-height:1.78}
@@ -14,7 +14,7 @@
     .plate{padding:16px;border:1px solid rgba(255,255,255,.25);box-shadow:7px 7px 0 rgba(0,0,0,.12)}.plate small{font:700 10px/1.4 Menlo,monospace;letter-spacing:.16em;color:#ffd483}.plate strong{display:block;margin:7px 0;font-size:23px;line-height:1.18}.plate span{color:rgba(255,255,255,.66);font-size:12px}
     nav{margin-top:22px}nav h4{margin:16px 8px 5px;color:#f4c76c;font:700 11px/1.4 Menlo,monospace;letter-spacing:.12em}nav a{display:block;padding:6px 9px;color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;border-left:2px solid transparent}nav a:hover{color:#fff;border-color:var(--yellow);background:rgba(255,255,255,.07)}
     .source{margin-top:22px;padding-top:17px;border-top:1px solid rgba(255,255,255,.16);font-size:11px;line-height:1.55;color:rgba(255,255,255,.64)}.source a{color:#ffd483}
-    main{width:min(1160px,100%);padding:0 52px 90px}.hero{position:relative;padding:72px 0 48px;border-bottom:3px double var(--blue)}.hero:after{content:"13 PROBLEMS / 16 RUNNABLE MODELS";position:absolute;right:0;top:30px;color:rgba(18,63,87,.18);font:700 11px/1 Menlo,monospace;letter-spacing:.14em}.eyebrow{color:var(--red);font:700 12px/1.4 Menlo,monospace;letter-spacing:.14em}h1,h2,h3,h4{font-family:"FZKai-Z03","STKaiti","KaiTi",serif;line-height:1.25}h1{max-width:930px;margin:13px 0 16px;font-size:clamp(39px,5.2vw,68px);letter-spacing:-.035em}.hero p{max-width:860px;color:var(--muted);font-size:18px}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.badge{padding:5px 9px;border:1px solid var(--line);background:rgba(255,255,255,.5);font:700 11px/1.3 Menlo,monospace}
+    main{width:min(1160px,100%);padding:0 52px 90px}.hero{position:relative;padding:72px 0 48px;border-bottom:3px double var(--blue)}.hero:after{content:"16 PROBLEMS / 19 RUNNABLE MODELS";position:absolute;right:0;top:30px;color:rgba(18,63,87,.18);font:700 11px/1 Menlo,monospace;letter-spacing:.14em}.eyebrow{color:var(--red);font:700 12px/1.4 Menlo,monospace;letter-spacing:.14em}h1,h2,h3,h4{font-family:"FZKai-Z03","STKaiti","KaiTi",serif;line-height:1.25}h1{max-width:930px;margin:13px 0 16px;font-size:clamp(39px,5.2vw,68px);letter-spacing:-.035em}.hero p{max-width:860px;color:var(--muted);font-size:18px}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.badge{padding:5px 9px;border:1px solid var(--line);background:rgba(255,255,255,.5);font:700 11px/1.3 Menlo,monospace}
     section{scroll-margin-top:22px;padding:54px 0 8px}h2{display:flex;gap:14px;align-items:baseline;margin:0 0 22px;color:var(--blue);font-size:35px}h2 .n{color:var(--orange);font:700 15px/1 Menlo,monospace}h3{margin:30px 0 12px;color:var(--blue);font-size:23px}h4{margin:20px 0 8px;font-size:18px}.lead{color:#34434d;font-size:17px}.exercise{padding-top:64px;border-top:1px solid var(--line)}.exercise:first-of-type{border-top:0}.exercise-title{display:grid;grid-template-columns:90px minmax(0,1fr);gap:20px;align-items:start}.exercise-no{display:grid;place-items:center;aspect-ratio:1;color:#fff;background:var(--blue);border-radius:50%;font:700 20px/1 Menlo,monospace;box-shadow:6px 6px 0 var(--yellow)}.exercise-title h2{display:block;margin:5px 0 8px}.exercise-title p{margin:0;color:var(--muted)}
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}.card{padding:18px 19px;background:var(--panel);border:1px solid var(--line)}.card h3,.card h4{margin-top:0}.callout{position:relative;margin:20px 0;padding:18px 20px 18px 25px;background:var(--panel);border:1px solid var(--line);box-shadow:6px 6px 0 #e4decf}.callout:before{content:"";position:absolute;inset:-1px auto -1px -1px;width:5px;background:var(--yellow)}.callout.warn:before{background:var(--red)}.callout strong{color:var(--blue)}
     .problem{position:relative;margin:28px 0 31px;padding:25px 27px 22px;overflow:hidden;background:#fbf7ec;border:1px solid rgba(165,60,50,.25);border-top:5px solid var(--red);box-shadow:8px 8px 0 rgba(165,60,50,.08)}.problem:after{content:"Q";position:absolute;right:12px;top:-28px;color:rgba(165,60,50,.055);font:900 126px/1 Georgia,serif;pointer-events:none}.problem-head{position:relative;z-index:1;display:flex;justify-content:space-between;gap:16px;align-items:center;margin:-4px 0 13px;padding-bottom:10px;border-bottom:1px solid rgba(165,60,50,.2)}.problem-head span{color:var(--red);font:700 14px/1.2 Menlo,monospace;letter-spacing:.12em}.problem-head small{color:var(--muted);font:700 10px/1.2 Menlo,monospace;letter-spacing:.08em}.problem p{position:relative;z-index:1;margin:8px 0;text-align:justify}.problem table{position:relative;z-index:1;margin:14px 0 5px;background:rgba(255,255,255,.56)}.problem table caption{padding:0 0 8px;color:var(--blue);font-weight:700}.problem .flow{position:relative;z-index:1;margin:14px 0}.problem-note{color:var(--muted);font-size:12px}
@@ -27,11 +27,12 @@
 <body>
 <div class="layout">
   <aside>
-    <div class="plate"><small>DISCRETE EVENT WORKBOOK</small><strong>GPSS World<br>综合习题答题册</strong><span>第 3 章指定题 + 5.4 + 5.7</span></div>
+    <div class="plate"><small>DISCRETE EVENT WORKBOOK</small><strong>GPSS World<br>综合习题答题册</strong><span>第 3、4、5 章指定课后题</span></div>
     <nav>
       <h4>READ ME</h4><a href="#guide">建模与读数说明</a>
       <h4>CHAPTER 03</h4>
       <a href="#p31">3.1 理发店</a><a href="#p32">3.2 打靶</a><a href="#p33">3.3 仓库供货</a><a href="#p34">3.4 零件返工</a><a href="#p36">3.6 加工中心</a><a href="#p37">3.7 汽车清洗店</a><a href="#p38">3.8 诊所</a><a href="#p39">3.9 电视机维修</a><a href="#p310">3.10 缝纫机维修</a><a href="#p311">3.11 转台装配线</a><a href="#p312">3.12 两站串联系统</a>
+      <h4>CHAPTER 04</h4><a href="#p42">4.2 纺织工厂</a><a href="#p43">4.3 加油站</a><a href="#p46">4.6 超市购物</a>
       <h4>CHAPTER 05</h4><a href="#p54">5.4 三部件机器</a><a href="#p57">5.7 铸造厂 EDD</a>
       <h4>FINAL</h4><a href="#check">统一检查表</a>
     </nav>
@@ -41,15 +42,15 @@
   <main>
     <header class="hero">
       <div class="eyebrow">MODEL / ROUTE / COLLECT / VERIFY</div>
-      <h1>第 3 章指定习题<br>与 5.4、5.7 完整详解</h1>
-      <p>共 13 道题、16 个可独立运行的模型。每题包含教材原题、建模判断、完整程序和报告取数位置；不填写未经 GPSS World 实际运行产生的随机实验值。</p>
-      <div class="badges"><span class="badge">3.1–3.4</span><span class="badge">3.6–3.12</span><span class="badge">5.4</span><span class="badge">5.7</span><span class="badge">GPSS WORLD</span><span class="badge">PRINT READY</span></div>
+      <h1>第 3、4、5 章指定课后题<br>完整建模详解</h1>
+      <p>共 16 道题、19 个可独立运行的模型。每题包含教材原题、建模判断、完整程序和报告取数位置；不填写未经 GPSS World 实际运行产生的随机实验值。</p>
+      <div class="badges"><span class="badge">3.1–3.4</span><span class="badge">3.6–3.12</span><span class="badge">4.2 / 4.3 / 4.6</span><span class="badge">5.4 / 5.7</span><span class="badge">GPSS WORLD</span><span class="badge">PRINT READY</span></div>
     </header>
 
     <section id="guide">
       <h2><span class="n">00</span>建模与读数说明</h2>
       <div class="grid">
-        <div class="card"><h3>时间单位</h3><p>同一模型内必须统一。题 3.9、3.10、5.4 用小时或折算后的分钟；题 3.11、3.12 用秒；其余在代码标题中注明。</p></div>
+        <div class="card"><h3>时间单位</h3><p>同一模型内必须统一。题 3.9、3.10、4.2、4.3、5.4 使用小时或分钟；题 3.11、3.12、4.6 使用秒；每个代码标题均已注明。</p></div>
         <div class="card"><h3>统计口径</h3><p>设施利用率看 FACILITY 的 UTIL.；并行同质资源看 STORAGE 的 UTIL.；平均等待/逗留看 QUEUE 的 AVE.TIME。</p></div>
         <div class="card"><h3>终止口径</h3><p>“运行若干小时”用独立控制事务；“完成若干件”只让合格完成事务执行 <code>TERMINATE 1</code>。</p></div>
         <div class="card"><h3>随机重复</h3><p>需要多次实验时用 <code>RMULT</code> 改变种子。本文保留所有取数实体，但不伪造一次随机运行的报告。</p></div>
@@ -521,6 +522,221 @@ WAIT2      STORAGE 1
            TERMINATE 1
            START    1</code></pre></div>
       <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>QT$Q_SYSTEM</td><td>顾客在系统中的平均逗留时间。</td></tr><tr><td>QT$Q_BLOCK（情况二）</td><td>因第二站等待位已占而滞留在第一站服务位置的平均时间。</td></tr><tr><td>SR$STATION1, FR$STATION2</td><td>两站利用率；第二种模型可观察阻塞的连锁影响。</td></tr></table>
+    </section>
+
+    <div class="chapter-divider"><h2>第 4 章 · 中级 GPSS World 语言</h2><p>使用函数、保存值、动态实体编号、条件结束和非平稳到达过程完成综合系统建模。</p></div>
+
+    <section class="exercise" id="p42">
+      <div class="exercise-title"><div class="exercise-no">4.2</div><div><h2>三工序纺织工厂</h2><p>正确表示三处库存、期初在制品、并行机器和每 16 小时一次的成品调运。</p></div></div>
+      <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.2</small></div><p>一个纺织工厂通过三道工序生产优质的马海毛纱。第一道工序在 5 个减压器框架中将纺纱压缩到合适的厚度。第二道工序是在 40 个细纱机中纺纱。最后一道工序是在 8 个线圈框架上将纱线成批地从纺纱线轴缠绕到锥体上。假设原材料的到达速率为每单位 12 分钟。减压器框架生产一单位需要 38±12 分钟，细纱机和线圈框架生产一单位时间分别为 320±120 分钟和 64±24 分钟。第一道和第二道工序间的初始压缩材料为 100 单位，第二道和第三道工序间的纱材料为 50 单位，第三道工序后的成品纱为 50 单位。完成的材料用 200 单位能力的货柜来装，每 16 小时被调运一次。仿真纺织工厂生产 800 小时的情况，确定这三种机器的使用率，找出生产过程中压缩材料、纱材料和成品纱的平均库存。</p></div>
+
+      <table><tr><th>现实对象</th><th>GPSS 表示</th><th>作用</th></tr><tr><td>每单位原料/在制品</td><td>活动实体</td><td>依次经历三道加工。</td></tr><tr><td>5 个减压器、40 个细纱机、8 个线圈架</td><td>容量 5、40、8 的存储器</td><td>表示同质并行机器并取得组利用率。</td></tr><tr><td>三处材料库存</td><td>三个大容量存储器</td><td>AVE.CONT. 即时间加权平均库存。</td></tr><tr><td>16 小时货柜</td><td>周期控制事务</td><td>每次装走最多 200 单位成品。</td></tr></table>
+      <div class="flow"><span>原料到达<br>12 min/单位</span><i>→</i><span>5×减压器<br>38±12</span><i>→</i><span>压缩材料库存</span><i>→</i><span>40×细纱机<br>320±120</span><i>→</i><span>纱材料库存</span><i>→</i><span>8×线圈架<br>64±24</span><i>→</i><span>成品库存<br>16 h 调运</span></div>
+      <ol class="steps"><li>统一用分钟：800 小时为 <code>48000</code> 分钟，16 小时为 <code>960</code> 分钟。</li><li>上道工序完成后进入库存，下道机器真正取得后才离开库存，使等待机器的物料仍计入库存。</li><li>100、50、50 单位期初材料分别从对应库存或后续工序入口启动。</li><li>货柜到点装走 <code>min(200, 当前成品库存)</code>，不足 200 时不能等待凑满。</li></ol>
+      <div class="formula">平均库存 = ∫库存量(t)dt ÷ 48000；STORAGE 报告的 AVE.CONT. 已自动完成时间加权。</div>
+
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_2.GPS · MINUTE</span><button class="copy">COPY</button></div><pre><code>* Exercise 4.2 - textile factory; time unit: minute
+PRESSERS  STORAGE 5
+SPINNERS  STORAGE 40
+WINDERS   STORAGE 8
+
+BUF12     STORAGE 1000000
+BUF23     STORAGE 1000000
+FINISHED  STORAGE 1000000
+
+* Raw-material units; priority 2 settles endpoint events before shipping/end.
+           GENERATE 12,,,,2
+STAGE1     ENTER    PRESSERS
+           ADVANCE  38,12
+           LEAVE    PRESSERS
+           ENTER    BUF12
+
+STAGE2     ENTER    SPINNERS
+           LEAVE    BUF12
+           ADVANCE  320,120
+           LEAVE    SPINNERS
+           ENTER    BUF23
+
+STAGE3     ENTER    WINDERS
+           LEAVE    BUF23
+           ADVANCE  64,24
+           LEAVE    WINDERS
+           ENTER    FINISHED
+           SAVEVALUE PRODUCED+,1
+           TERMINATE
+
+* Initial 100 units between stages 1 and 2.
+           GENERATE ,,,100,2
+           ENTER    BUF12
+           TRANSFER ,STAGE2
+
+* Initial 50 units between stages 2 and 3.
+           GENERATE ,,,50,2
+           ENTER    BUF23
+           TRANSFER ,STAGE3
+
+* Initial 50 finished units.
+           GENERATE ,,,1,2
+           ENTER    FINISHED,50
+           TERMINATE
+
+* A container departs every 960 minutes; capacity is 200 units.
+           GENERATE 960,,,,1
+           TEST GE  S$FINISHED,200,PARTLOAD
+           LEAVE    FINISHED,200
+           SAVEVALUE SHIPPED+,200
+           TERMINATE
+
+PARTLOAD   TEST G   S$FINISHED,0,NOLOAD
+           ASSIGN   LOAD,S$FINISHED
+           LEAVE    FINISHED,P$LOAD
+           SAVEVALUE SHIPPED+,P$LOAD
+NOLOAD     TERMINATE
+
+* 800 hours = 48000 minutes.
+           GENERATE 48000
+           TERMINATE 1
+           START    1</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$PRESSERS / SPINNERS / WINDERS</td><td>三组机器使用率，对应 STORAGE 表的 UTIL.。</td></tr><tr><td>SA$BUF12 / BUF23 / FINISHED</td><td>压缩材料、纱材料、成品纱的平均库存，对应 AVE.CONT.。</td></tr><tr><td>S$BUF12 等</td><td>结束瞬间库存，不要误当作平均库存。</td></tr><tr><td>X$PRODUCED / X$SHIPPED</td><td>辅助核对累计生产量和调运量。</td></tr></table>
+    </section>
+
+    <section class="exercise" id="p43">
+      <div class="exercise-title"><div class="exercise-no">4.3</div><div><h2>三级燃油加油站</h2><p>服务时间由燃油类别、订单量和开始装油时的站内车辆数共同决定。</p></div></div>
+      <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.3</small></div><p>某一个加油站能够配给三个级别的燃油：①家庭取暖用的燃油；②轻工业用的燃油；③运输用的燃油。每一级别的燃油都有一个对应的油泵。订单中燃油的数量在 3000 加仑和 5000 加仑中变化，每次增加 10 加仑，是均匀分布。这个站点最多能容纳 12 辆车。来加油站装油的汽车到达的平均时间间隔是 18 分钟（服从指数分布），仿真加油站 5 天的运营情况。假设车辆加满油所需的时间由以下因素决定：</p><p>（1）油泵效率（对①②③这三种油分别为每 1000 加仑需要 6、5 和 7 分钟）；（2）订单的大小；（3）开始加油时站点已容纳的车辆数量（每一辆车需要额外的 30 秒）；（4）两分钟的准备和安装时间。</p></div>
+      <div class="formula">T(g,q,n) = 2 + k(g) × q ÷ 1000 + 0.5 × n（分钟）</div>
+      <ul><li>到达间隔使用均值 18 分钟的指数分布。</li><li>订单量为 <code>3000 + 10 × (RN3 mod 201)</code>，得到 3000、3010、…、5000。</li><li><code>S$SITE</code> 在取得油泵、开始装油时求值，符合题目规定的计时点。</li><li>题面没有给三类燃油的需求比例，程序明确采用各 <code>1/3</code>；如教师另有给定，只需修改类别随机分配。</li></ul>
+      <div class="callout warn"><strong>容量口径：</strong>题面只说站点最多容纳 12 辆，未写“站满即离开”，因此模型让额外车辆在站外等待，并用 <code>Q_OUTSIDE</code> 统计；若课程要求流失，应改为满员分支计数。</div>
+
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_3.GPS · MINUTE</span><button class="copy">COPY</button></div><pre><code>* Exercise 4.3 - fuel station; time unit: minute
+* The problem gives no grade mix; grades 1, 2 and 3 are equiprobable.
+EFF        FUNCTION P$GRADE,D3
+1,6/2,5/3,7
+
+SITE       STORAGE 12
+
+           GENERATE (EXPONENTIAL(1,0,18))
+           SAVEVALUE ARRIVED+,1
+           ASSIGN   GRADE,(1+RN2@3)
+           ASSIGN   AMOUNT,(3000+10#(RN3@201))
+
+* Vehicles beyond the 12-space site wait outside.
+           QUEUE    Q_OUTSIDE
+           ENTER    SITE
+           DEPART   Q_OUTSIDE
+
+* Facilities 1, 2 and 3 are the three dedicated pumps.
+           QUEUE    P$GRADE
+           SEIZE    P$GRADE
+           DEPART   P$GRADE
+           ADVANCE  (2+FN$EFF#P$AMOUNT/1000+0.5#S$SITE)
+           RELEASE  P$GRADE
+           LEAVE    SITE
+
+* Savevalues 1..3 count completed orders by grade; 20 totals gallons.
+           SAVEVALUE P$GRADE+,1
+           SAVEVALUE 20+,P$AMOUNT
+           SAVEVALUE COMPLETED+,1
+           TERMINATE
+
+* Five 24-hour days = 7200 minutes.
+           GENERATE 7200
+           TERMINATE 1
+           START    1</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR1 / FR2 / FR3</td><td>三台专用油泵利用率。</td></tr><tr><td>QA1..3 / QT1..3</td><td>各油泵平均队长和平均等待时间。</td></tr><tr><td>SA$SITE / SM$SITE</td><td>站内平均、最大车辆数；最大值不超过 12。</td></tr><tr><td>QT$Q_OUTSIDE</td><td>站内容量约束造成的站外等待。</td></tr><tr><td>X1..X3 / X20</td><td>三类完成订单数和累计装油量。</td></tr></table>
+    </section>
+
+    <section class="exercise" id="p46">
+      <div class="exercise-title"><div class="exercise-no">4.6</div><div><h2>停车—购物—付款系统</h2><p>综合处理停车流失、购物篮/车等待、18 个柜台选择和营业结束后的系统清空。</p></div></div>
+      <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.6</small></div><p>顾客乘车去超市购物。停车场共能容纳 650 辆车。如果一个顾客没有找到停车位，就选择离开。一个顾客从停车场走到超市需要花费 60 秒。每个顾客选购 5～100 件（均匀分布）商品。若顾客选购商品数不超过 10 件（含 10 件），则会使用购物篮（总共提供 70 个购物篮）；如选购件数超过 10 件，则使用购物车（共提供 650 辆购物车）；若没有购物车或购物篮则等待。每个顾客的消费时间取决于选购数量（每件商品花费 10 秒钟）。有 18 个付款台，其中 1 号为特快付款台，2～18 号为普通付款台。购物数量大于 10 件的顾客总是选择 17 个普通付款台中队列最短的去付款。购物数量不大于 10 件的顾客可选择特快付款台，也可选择普通付款台；当特快付款台中队列长度大于普通付款台中的最短队列的 2.5 倍时，选择普通付款台中的最短队列，否则选择特快付款台。付款时间为每件商品 2 秒外加 25、30、35 秒，外加时间取决于付款方式（消费卡、现金或者信用卡，三种方式概率相同，均为 33.3%）。付款后，顾客花费 60 秒走至停车处，装车离开停车场。</p><p>假设顾客在营业时间内到达的时间间隔符合指数分布，但均值随时间变化，如表 4.9 所示。超市每天营业 12 小时，在营业时间内到达的顾客全部购物完成后才能关门，仿真一天的营业情况。</p><table><caption>表 4.9　顾客到达时间间隔随时间变化的情况</caption><tr><th>时间段（分钟）</th><th>0～30</th><th>30～90</th><th>90～150</th><th>660～690</th><th>690+</th></tr><tr><td>到达速率（人/时）</td><td>300</td><td>600</td><td>800</td><td>600</td><td>300</td></tr></table></div>
+      <div class="callout warn"><strong>表 4.9 的缺口：</strong>教材表格从 90～150 分直接跳到 660～690 分。程序按最自然的连续解释，将 90～660 分均视为 800 人/时；如教师给出其他口径，只需调整 <code>ARRMEAN</code> 数据行。</div>
+      <table><tr><th>营业时段</th><th>秒区间</th><th>速率</th><th>指数均值</th></tr><tr><td>0～30 分</td><td>0～1800</td><td>300 人/时</td><td>12 秒</td></tr><tr><td>30～90 分</td><td>1800～5400</td><td>600 人/时</td><td>6 秒</td></tr><tr><td>90～660 分</td><td>5400～39600</td><td>800 人/时</td><td>4.5 秒</td></tr><tr><td>660～690 分</td><td>39600～41400</td><td>600 人/时</td><td>6 秒</td></tr><tr><td>690～720 分</td><td>41400～43200</td><td>300 人/时</td><td>12 秒</td></tr></table>
+      <div class="flow"><span>营业判断</span><i>→</i><span>停车位<br>满则离开</span><i>→</i><span>步行 60s</span><i>→</i><span>5～100 件</span><i>→</i><span>篮/车<br>无资源则等</span><i>→</i><span>购物<br>10s/件</span><i>→</i><span>选择柜台</span><i>→</i><span>付款</span><i>→</i><span>归还篮/车</span><i>→</i><span>步行 60s<br>离开</span></div>
+      <ol class="steps"><li>先在 2～18 号普通柜台中选择最短队列，把柜台号保存到参数 <code>COUNTER</code>。</li><li>商品数大于 10 时必去普通柜台；小件顾客只有在特快队列严格大于最短普通队列的 2.5 倍时才改去普通柜台。</li><li>43200 秒时只关闭营业入口，不立即终止；等待 <code>N$ADMIT=N$DONE</code> 后才真正关门。</li><li>停车位、篮/车和付款台均在顾客离开前正确释放，保留全部标准报告数据。</li></ol>
+
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_6.GPS · SECOND</span><button class="copy">COPY</button></div><pre><code>* Exercise 4.6 - supermarket; time unit: second
+* Table 4.9 is interpreted as 800 persons/hour from minute 90 to 660.
+ARRMEAN    FUNCTION C1,D5
+1800,12/5400,6/39600,4.5/41400,6/43200,12
+
+PAYADD     FUNCTION RN3,D3
+0.333333,25/0.666667,30/1,35
+
+PARK       STORAGE 650
+BASKETS    STORAGE 70
+CARTS      STORAGE 650
+
+           INITIAL  LS$OPEN
+
+* Customer-arrival process.
+           GENERATE (EXPONENTIAL(1,0,FN$ARRMEAN))
+           GATE LS  OPEN,TOO_LATE
+ADMIT      SAVEVALUE ARRIVED+,1
+
+* Parking full: leave immediately.
+           GATE SNF PARK,NO_PARK
+           ENTER    PARK
+           ADVANCE  60
+
+* Uniform integer number of items: 5..100.
+           ASSIGN   ITEMS,(5+RN2@96)
+           TEST LE  P$ITEMS,10,GET_CART
+
+           QUEUE    Q_BASKET
+           ENTER    BASKETS
+           DEPART   Q_BASKET
+           TRANSFER ,SHOP
+
+GET_CART   QUEUE    Q_CART
+           ENTER    CARTS
+           DEPART   Q_CART
+
+SHOP       ADVANCE  (10#P$ITEMS)
+
+* Find the shortest ordinary queue among counters 2..18.
+           SELECT MIN COUNTER,2,18,,Q
+           TEST G   P$ITEMS,10,SMALL
+           TRANSFER ,JOINPAY
+
+* Small customer uses ordinary only when Q1 > 2.5 * shortest ordinary Q.
+SMALL      TEST G   Q1,(2.5#Q*COUNTER),EXPRESS
+           TRANSFER ,JOINPAY
+EXPRESS    ASSIGN   COUNTER,1
+
+* Queue length includes the customer currently paying, as in Example 4.7.
+JOINPAY    QUEUE    P$COUNTER
+           SEIZE    P$COUNTER
+           ADVANCE  (2#P$ITEMS+FN$PAYADD)
+           RELEASE  P$COUNTER
+           DEPART   P$COUNTER
+
+           SAVEVALUE P$COUNTER+,1
+           SAVEVALUE SOLDITEMS+,P$ITEMS
+
+* Return the basket/cart only after payment.
+           TEST LE  P$ITEMS,10,RETURN_CART
+           LEAVE    BASKETS
+           TRANSFER ,WALK_BACK
+RETURN_CART LEAVE   CARTS
+
+WALK_BACK  ADVANCE  60
+           LEAVE    PARK
+           SAVEVALUE COMPLETED+,1
+           TRANSFER ,DONE
+
+NO_PARK    SAVEVALUE LOSTPARK+,1
+           TRANSFER ,DONE
+
+DONE       SAVEVALUE ACCOUNTED+,1
+           TERMINATE
+TOO_LATE   TERMINATE
+
+* Close admission at 12 hours, then wait for all admitted customers.
+           GENERATE 43200,,,1,127
+           LOGIC R  OPEN
+           TEST E   N$ADMIT,N$DONE
+           TERMINATE 1
+           START    1</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$PARK / SA$PARK / SM$PARK</td><td>停车场使用率、平均占用和最大占用。</td></tr><tr><td>SR$BASKETS / SR$CARTS</td><td>购物篮和购物车使用率及相应等待。</td></tr><tr><td>FR1..18 / QA1..18 / QT1..18</td><td>18 个付款台的利用率、平均队长和平均等待时间。</td></tr><tr><td>X$LOSTPARK</td><td>未找到停车位而离开的顾客数。</td></tr><tr><td>X1..18 / X$SOLDITEMS</td><td>各付款台完成顾客数与累计售出商品数。</td></tr><tr><td>END TIME</td><td>营业入口关闭并清空系统后的真正关门时刻。</td></tr></table>
     </section>
 
     <div class="chapter-divider"><h2>第 5 章 · 高级 GPSS World 语言</h2><p>使用复制/装配、循环、表格和用户链完成并行部件生产与 EDD 订单调度。</p></div>
