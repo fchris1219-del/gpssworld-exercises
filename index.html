@@ -22,6 +22,7 @@
     code{font-family:Menlo,Monaco,"SFMono-Regular",monospace;font-size:.91em}:not(pre)>code{padding:2px 5px;color:#8e3027;background:rgba(165,60,50,.08)}.codebox{margin:17px 0 29px;border:1px solid #274758;box-shadow:0 16px 40px rgba(21,34,43,.13)}.codehead{display:flex;justify-content:space-between;align-items:center;padding:9px 11px 9px 15px;color:#b9d7d4;background:#173443;border-bottom:1px solid #355567;font:700 10px/1.4 Menlo,monospace;letter-spacing:.07em}.copy{border:1px solid rgba(255,255,255,.28);padding:5px 8px;color:#fff;background:transparent;cursor:pointer;font:inherit}.copy:hover{background:rgba(255,255,255,.1)}pre{margin:0;padding:21px;overflow:auto;color:var(--codeink);background:var(--code);font:13px/1.58 Menlo,Monaco,monospace;tab-size:4}.formula{margin:15px 0;padding:13px 16px;border-left:4px solid var(--cyan);background:rgba(10,124,134,.075);font-family:Menlo,Monaco,monospace;overflow:auto}.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:17px 0 24px}.flow span{display:grid;place-items:center;min-height:50px;padding:7px 11px;text-align:center;background:var(--panel);border:1px solid var(--line);font-size:13px}.flow i{display:grid;place-items:center;color:var(--orange);font-style:normal;font-weight:800}.steps{counter-reset:s;list-style:none;padding:0}.steps li{counter-increment:s;position:relative;margin:11px 0;padding-left:43px}.steps li:before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;color:var(--red);font:700 12px/2 Menlo,monospace;border-bottom:2px solid var(--red)}.report td:first-child{width:30%;color:#8e3027;font-family:Menlo,monospace}.chapter-divider{margin-top:65px;padding:27px;color:#fff;background:linear-gradient(120deg,var(--blue),#0b6870);border-left:9px solid var(--yellow)}.chapter-divider h2{margin:0;color:#fff}.chapter-divider p{margin:8px 0 0;color:rgba(255,255,255,.75)}.stamp{display:inline-block;padding:6px 9px;color:var(--red);border:2px solid var(--red);transform:rotate(-2deg);font:700 11px/1 Menlo,monospace;letter-spacing:.11em}.footer{margin-top:67px;padding-top:22px;border-top:2px solid var(--blue);color:var(--muted);font-size:13px}
     @media(max-width:940px){.layout{display:block}aside{position:relative;height:auto;border-right:0;border-bottom:6px solid var(--orange)}nav{columns:2}nav h4{break-after:avoid}main{padding:0 22px 65px}.grid{grid-template-columns:1fr}.exercise-title{grid-template-columns:68px minmax(0,1fr)}.exercise-no{font-size:15px}.hero{padding-top:48px}}
     @media print{body{background:#fff;font-size:10pt}.layout{display:block}aside{display:none}main{width:auto;padding:0}.hero{padding:18px 0 25px}.hero:after,.copy{display:none}section,.exercise{padding-top:28px}.card,.callout,table{break-inside:avoid}.codebox{box-shadow:none;break-inside:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:7.2pt}.exercise-title{grid-template-columns:54px 1fr}.exercise-no{box-shadow:none}.chapter-divider{background:#fff;color:var(--ink);border:2px solid var(--blue)}.chapter-divider h2{color:var(--blue)}}
+    .hero:after{content:"19 PROBLEMS / 23 RUNNABLE MODELS"}
   </style>
 </head>
 <body>
@@ -32,25 +33,25 @@
       <h4>READ ME</h4><a href="#guide">建模与读数说明</a>
       <h4>CHAPTER 03</h4>
       <a href="#p31">3.1 理发店</a><a href="#p32">3.2 打靶</a><a href="#p33">3.3 仓库供货</a><a href="#p34">3.4 零件返工</a><a href="#p36">3.6 加工中心</a><a href="#p37">3.7 汽车清洗店</a><a href="#p38">3.8 诊所</a><a href="#p39">3.9 电视机维修</a><a href="#p310">3.10 缝纫机维修</a><a href="#p311">3.11 转台装配线</a><a href="#p312">3.12 两站串联系统</a>
-      <h4>CHAPTER 04</h4><a href="#p42">4.2 纺织工厂</a><a href="#p43">4.3 加油站</a><a href="#p46">4.6 超市购物</a>
+      <h4>CHAPTER 04</h4><a href="#p41">4.1 库存订货</a><a href="#p42">4.2 纺织工厂</a><a href="#p43">4.3 加油站</a><a href="#p44">4.4 银行柜台</a><a href="#p45">4.5 宇宙飞船</a><a href="#p46">4.6 超市购物</a><a href="#eg48">例4.8 四油罐</a>
       <h4>CHAPTER 05</h4><a href="#p54">5.4 三部件机器</a><a href="#p57">5.7 铸造厂 EDD</a>
       <h4>FINAL</h4><a href="#check">统一检查表</a>
     </nav>
-    <div class="source">题面来源：《离散事件系统建模仿真及 GPSS World 教程》<br>题页及关联例题均已从扫描页视觉复核；本站不分发教材 PDF。</div>
+    <div class="source">题面来源：<a href="离散事件系统建模仿真及GPSSWorld教程_3_.pdf">《离散事件系统建模仿真及 GPSS World 教程》</a><br>题页及关联例题均已从扫描页视觉复核。</div>
   </aside>
 
   <main>
     <header class="hero">
       <div class="eyebrow">MODEL / ROUTE / COLLECT / VERIFY</div>
       <h1>第 3、4、5 章指定课后题<br>完整建模详解</h1>
-      <p>共 16 道题、19 个可独立运行的模型。每题包含教材原题、建模判断、完整程序和报告取数位置；不填写未经 GPSS World 实际运行产生的随机实验值。</p>
-      <div class="badges"><span class="badge">3.1–3.4</span><span class="badge">3.6–3.12</span><span class="badge">4.2 / 4.3 / 4.6</span><span class="badge">5.4 / 5.7</span><span class="badge">GPSS WORLD</span><span class="badge">PRINT READY</span></div>
+      <p>共 19 道课后题、22 个课后题模型，另附例 4.8 参考程序。每题包含教材原题、建模判断、按参考答案覆盖的完整程序和报告取数位置；不填写未经 GPSS World 实际运行产生的随机实验值。</p>
+      <div class="badges"><span class="badge">3.1–3.4</span><span class="badge">3.6–3.12</span><span class="badge">4.1–4.6</span><span class="badge">例 4.8</span><span class="badge">5.4 / 5.7</span><span class="badge">GPSS WORLD</span><span class="badge">PRINT READY</span></div>
     </header>
 
     <section id="guide">
       <h2><span class="n">00</span>建模与读数说明</h2>
       <div class="grid">
-        <div class="card"><h3>时间单位</h3><p>同一模型内必须统一。题 3.9、3.10、4.2、4.3、5.4 使用小时或分钟；题 3.11、3.12、4.6 使用秒；每个代码标题均已注明。</p></div>
+        <div class="card"><h3>时间单位</h3><p>同一模型内必须统一。各题代码标题标出了小时、分钟或秒；涉及 4.2、4.4、4.5、4.6、5.7 的换算已按相应参考程序写入。</p></div>
         <div class="card"><h3>统计口径</h3><p>设施利用率看 FACILITY 的 UTIL.；并行同质资源看 STORAGE 的 UTIL.；平均等待/逗留看 QUEUE 的 AVE.TIME。</p></div>
         <div class="card"><h3>终止口径</h3><p>“运行若干小时”用独立控制事务；“完成若干件”只让合格完成事务执行 <code>TERMINATE 1</code>。</p></div>
         <div class="card"><h3>随机重复</h3><p>需要多次实验时用 <code>RMULT</code> 改变种子。本文保留所有取数实体，但不伪造一次随机运行的报告。</p></div>
@@ -97,14 +98,13 @@ DONE       DEPART   Q_SYSTEM
     <section class="exercise" id="p32">
       <div class="exercise-title"><div class="exercise-no">3.2</div><div><h2>打中 50 个目标</h2><p>目标每 10±5 秒出现，每枪成功率 80%。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 03 · EXERCISE 3.2</small></div><p>打靶练习，目标以 10±5 秒出现一个，每枪的成功率为 80%，问要多长时间才能打中 50 个目标？</p></div>
-      <p>命中事务才使终止计数器减 1；未命中事务仅消失。<code>TRANSFER .2,HIT,MISS</code> 表示 20% 去 MISS、80% 去 HIT。</p>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_2.GPS · SECOND</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.2 - target shooting; second
-           GENERATE 10,5
-           TRANSFER .2,HIT,MISS
-HIT        TERMINATE 1
-MISS       TERMINATE
-           START    50</code></pre></div>
-      <div class="callout"><strong>取数：</strong>标准报告的 <code>END TIME</code> 就是打中第 50 个目标所需时间；<code>N$MISS</code> 可核对未命中数。</div>
+      <p>按参考答案，<code>TRANSFER .8,FALL,SUC</code> 使 80% 的事务进入成功分支 <code>SUC</code>；只有成功事务执行 <code>TERMINATE 1</code>。</p>
+      <div class="codebox"><div class="codehead"><span>3.2 P98.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>           GENERATE  10,5
+           TRANSFER  .8,FALL,SUC
+FALL       TERMINATE
+SUC        TERMINATE 1
+           START     50</code></pre></div>
+      <div class="callout"><strong>取数：</strong>标准报告的 <code>END TIME</code> 即打中第 50 个目标所需时间；<code>N$FALL</code> 可核对失败次数。</div>
     </section>
 
     <section class="exercise" id="p33">
@@ -146,194 +146,166 @@ OUTAGE     TERMINATE 1
       <div class="exercise-title"><div class="exercise-no">3.4</div><div><h2>A–B 加工、检验与返工</h2><p>分别完成“运行 40 小时”和“生产 200 个合格品”两种实验。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 03 · EXERCISE 3.4</small></div><p>一个零件加工过程，零件以 20±5 分的速率到达，到达后先由机床 A 加工，加工时间为 16±5 分，然后再由机床 B 加工，加工时间为 15±10 分，最后通过一个检验员检验，检验需要 10±2 分，其中 5% 的零件加工不合格，需要重新加工。试仿真 40 小时和生产 200 个合格零件，估算机床的平均利用率。</p></div>
       <div class="flow"><span>到达 20±5</span><i>→</i><span>机床 A<br>16±5</span><i>→</i><span>机床 B<br>15±10</span><i>→</i><span>检验员<br>10±2</span><i>→</i><span>95% 合格</span><i>↘</i><span>5% 回 A 重做</span></div>
-      <p>不合格件重新执行 A、B 和检验。两种程序主体相同，差别只在结束控制。</p>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_4A.GPS · 40 HOURS</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.4A - run for 40 hours; minute
-           GENERATE 20,5
-STAGE_A    QUEUE    Q_A
-           SEIZE    MACH_A
+      <p>参考答案把返工入口标为 <code>REJ</code>，合格出口标为 <code>ACC</code>。两种实验使用同一加工主体，只替换末尾控制。</p>
+      <div class="codebox"><div class="codehead"><span>3.4 P98.GPS · 仿真 40 小时</span><button class="copy">COPY</button></div><pre><code>           GENERATE 20,5
+REJ        QUEUE    Q_A
+           SEIZE    S_A
            DEPART   Q_A
            ADVANCE  16,5
-           RELEASE  MACH_A
-
+           RELEASE  S_A
            QUEUE    Q_B
-           SEIZE    MACH_B
+           SEIZE    S_B
            DEPART   Q_B
            ADVANCE  15,10
-           RELEASE  MACH_B
-
-           QUEUE    Q_I
-           SEIZE    INSPECTOR
-           DEPART   Q_I
+           RELEASE  S_B
+           QUEUE    Q_C
+           SEIZE    S_C
+           DEPART   Q_C
            ADVANCE  10,2
-           RELEASE  INSPECTOR
-           TRANSFER .05,GOOD,REWORK
+           RELEASE  S_C
+           TRANSFER .05,ACC,REJ
 
-GOOD       TERMINATE
-REWORK     TRANSFER ,STAGE_A
-
-           GENERATE 2400
+ACC        TERMINATE
+           GENERATE 60
            TERMINATE 1
-           START    1</code></pre></div>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_4B.GPS · 200 GOOD PARTS</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.4B - stop after 200 good parts; minute
-           GENERATE 20,5
-STAGE_A    QUEUE    Q_A
-           SEIZE    MACH_A
+           START    40</code></pre></div>
+      <div class="codebox"><div class="codehead"><span>3.4 P98.GPS · 生产 200 个合格零件</span><button class="copy">COPY</button></div><pre><code>           GENERATE 20,5
+REJ        QUEUE    Q_A
+           SEIZE    S_A
            DEPART   Q_A
            ADVANCE  16,5
-           RELEASE  MACH_A
+           RELEASE  S_A
            QUEUE    Q_B
-           SEIZE    MACH_B
+           SEIZE    S_B
            DEPART   Q_B
            ADVANCE  15,10
-           RELEASE  MACH_B
-           QUEUE    Q_I
-           SEIZE    INSPECTOR
-           DEPART   Q_I
+           RELEASE  S_B
+           QUEUE    Q_C
+           SEIZE    S_C
+           DEPART   Q_C
            ADVANCE  10,2
-           RELEASE  INSPECTOR
-           TRANSFER .05,GOOD,REWORK
-GOOD       TERMINATE 1
-REWORK     TRANSFER ,STAGE_A
+           RELEASE  S_C
+           TRANSFER .05,ACC,REJ
+
+ACC        TERMINATE 1
            START    200</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR$MACH_A, FR$MACH_B</td><td>两台机床平均利用率。</td></tr><tr><td>N$REWORK</td><td>返工次数。</td></tr><tr><td>END TIME（3.4B）</td><td>生产 200 个合格件所需时间。</td></tr></table>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR$S_A / FR$S_B</td><td>两台加工机床平均利用率。</td></tr><tr><td>N$REJ</td><td>进入返工入口的次数。</td></tr><tr><td>END TIME（200 件模型）</td><td>生产 200 个合格件所需时间。</td></tr></table>
     </section>
 
     <section class="exercise" id="p36">
       <div class="exercise-title"><div class="exercise-no">3.6</div><div><h2>四工作站加工中心瓶颈</h2><p>A 后分流，B 的 20% 还要进入 C，所有零件最终进入 D。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 03 · EXERCISE 3.6</small></div><p>有一个加工中心，由 4 个工作站组成，零件以 20±10 分钟的速率到达，零件通过加工中心的处理流程如图 3.23 所示。各站拥有的机器数及处理时间如表 3.4 所示。仿真运行 100 个小时。确定哪个工作站是加工中心的瓶颈。</p><div class="flow"><span>零件到达 → A</span><i>→</i><span>B（60%）</span><i>→</i><span>D（80%）</span><span>A</span><i>→</i><span>C（40%）</span><i>→</i><span>D</span><span>B</span><i>→</i><span>C（20%）</span></div><table><caption>表 3.4　各站拥有的机器数及处理时间</caption><tr><th>工作站</th><th>机器数</th><th>处理时间</th></tr><tr><td>A</td><td>2</td><td>30±15 分钟</td></tr><tr><td>B</td><td>1</td><td>20±10 分钟</td></tr><tr><td>C</td><td>3</td><td>70±20 分钟</td></tr><tr><td>D</td><td>5</td><td>90±30 分钟</td></tr></table><p class="problem-note">图 3.23 以文字流程重绘：A 后 60% 去 B、40% 去 C；B 后 80% 去 D、20% 去 C；C 后去 D。</p></div>
       <table><tr><th>工作站</th><th>机器数</th><th>处理时间</th><th>进入比例</th></tr><tr><td>A</td><td>2</td><td>30±15 min</td><td>100%</td></tr><tr><td>B</td><td>1</td><td>20±10 min</td><td>60%</td></tr><tr><td>C</td><td>3</td><td>70±20 min</td><td>40% + 60%×20% = 52%</td></tr><tr><td>D</td><td>5</td><td>90±30 min</td><td>100%</td></tr></table>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_6.GPS · MINUTE</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.6 - four-station machining center; minute
-STA         STORAGE 2
-STB         STORAGE 1
-STC         STORAGE 3
-STD         STORAGE 5
-
-           GENERATE 20,10
-           QUEUE    QA
-           ENTER    STA
-           DEPART   QA
-           ADVANCE  30,15
-           LEAVE    STA
-           TRANSFER .4,TO_B,TO_C
-
-TO_B       QUEUE    QB
-           ENTER    STB
-           DEPART   QB
-           ADVANCE  20,10
-           LEAVE    STB
-           TRANSFER .2,TO_D,TO_C
-
-TO_C       QUEUE    QC
-           ENTER    STC
-           DEPART   QC
-           ADVANCE  70,20
-           LEAVE    STC
-
-TO_D       QUEUE    QD
-           ENTER    STD
-           DEPART   QD
-           ADVANCE  90,30
-           LEAVE    STD
+      <div class="codebox"><div class="codehead"><span>3.6 P98.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>S_A        STORAGE   2
+S_B        STORAGE   1
+S_C        STORAGE   3
+S_D        STORAGE   5
+           GENERATE  20,10
+           QUEUE     A
+           ENTER     S_A
+           DEPART    A
+           ADVANCE   30,15
+           LEAVE     S_A
+           TRANSFER  .6,ADDC,ADDB
+ADDB       QUEUE     B
+           ENTER     S_B
+           DEPART    B
+           ADVANCE   20,10
+           LEAVE     S_B
+           TRANSFER  .8,ADDC,ADDD
+ADDC       QUEUE     C
+           ENTER     S_C
+           DEPART    C
+           ADVANCE   70,20
+           LEAVE     S_C
+ADDD       QUEUE     D
+           ENTER     S_D
+           DEPART    D
+           ADVANCE   90,30
+           LEAVE     S_D
            TERMINATE
-
-           GENERATE 6000
+           GENERATE  6000
            TERMINATE 1
-           START    1</code></pre></div>
-      <div class="callout"><strong>瓶颈判断：</strong>比较 <code>SR$STA…SR$STD</code> 及四个队列。按平均负荷预判 D 的负荷最高（约 0.90），所以 D 是理论瓶颈；实际提交时以运行报告中最高利用率和持续积压共同确认。</div>
+           START     1</code></pre></div>
+      <div class="callout"><strong>瓶颈判断：</strong>按参考答案读取 <code>SR$S_A…SR$S_D</code> 和队列 A～D；最高利用率并伴随持续排队的工作站即瓶颈。</div>
     </section>
 
     <section class="exercise" id="p37">
       <div class="exercise-title"><div class="exercise-no">3.7</div><div><h2>三家汽车清洗店</h2><p>先做“全忙则离开”，再做“全忙则等待”；选择偏好 A &gt; B &gt; C。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 03 · EXERCISE 3.7</small></div><p>A、B、C 是三个汽车清洗店，汽车以 8±5 分钟到达。服务以每 15±6 分钟完成一辆，每个清洗店同时只能清洗一辆汽车。顾客喜欢 A 超过喜欢 B，喜欢 B 超过喜欢 C。若喜欢的清洗店忙的话，则选择空的清洗店，否则离开；若到达和离开事件同时发生时优先处理离开事件。仿真 100 小时，估算三家汽车清洗店的利用率。若没有空的清洗店，则要排队等待，又将如何？（提示：对于第二问可以在第一问的基础上增加一个容量为 3 的存储器来实现。）</p></div>
-      <h3>方案一：没有空店就离开</h3><p>服务中的事务提高到优先级 1，保证同时发生时先释放清洗店，再处理新到达车辆。</p>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_7A.GPS · LOSS SYSTEM</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.7A - leave if all three shops are busy; minute
-           GENERATE 8,5
-           TRANSFER BOTH,DO_A,CHECK_B
-CHECK_B    TRANSFER BOTH,DO_B,CHECK_C
-CHECK_C    TRANSFER BOTH,DO_C,LOST
-
-DO_A       SEIZE    SHOP_A
-           PRIORITY 1
-           ADVANCE  15,6
-           RELEASE  SHOP_A
+      <h3>方案一：没有空店就离开</h3><p>参考答案使用 <code>TRANSFER ALL</code> 依偏好顺序尝试 1、2、3 号设施；全部不可进入时转到 <code>ADD4</code> 离开。</p>
+      <div class="codebox"><div class="codehead"><span>3.7(1) P99.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>           GENERATE  8,5
+           TRANSFER  ALL,ADD1,ADD4,4
+ADD1       SEIZE     1
+           PRIORITY  1
+           ADVANCE   15,6
+           RELEASE   1
            TERMINATE
-DO_B       SEIZE    SHOP_B
-           PRIORITY 1
-           ADVANCE  15,6
-           RELEASE  SHOP_B
+ADD2       SEIZE     2
+           PRIORITY  1
+           ADVANCE   15,6
+           RELEASE   2
            TERMINATE
-DO_C       SEIZE    SHOP_C
-           PRIORITY 1
-           ADVANCE  15,6
-           RELEASE  SHOP_C
+ADD3       SEIZE     3
+           PRIORITY  1
+           ADVANCE   15,6
+           RELEASE   3
            TERMINATE
-LOST       TERMINATE
-
-           GENERATE 6000
+ADD4       TERMINATE
+           GENERATE  6000
            TERMINATE 1
-           START    1</code></pre></div>
-      <h3>方案二：没有空店就等待</h3><p>容量 3 的 <code>ALL_SHOPS</code> 先为车辆保留一个空店名额，再按 A、B、C 顺序选择具体设施，因此既能等待，又保留偏好和单店利用率。</p>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_7B.GPS · WAITING SYSTEM</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.7B - wait when all shops are busy; minute
-ALL_SHOPS  STORAGE 3
-
-           GENERATE 8,5
-           QUEUE    Q_WAIT
-           ENTER    ALL_SHOPS
-           DEPART   Q_WAIT
-           TRANSFER BOTH,DO_A,CHECK_B
-CHECK_B    TRANSFER BOTH,DO_B,DO_C
-
-DO_A       SEIZE    SHOP_A
-           PRIORITY 1
-           ADVANCE  15,6
-           RELEASE  SHOP_A
-           LEAVE    ALL_SHOPS
+           START     1</code></pre></div>
+      <h3>方案二：没有空店就等待</h3><p>参考答案先进入容量为 3 的 <code>QUE</code>；存储器满时车辆自动等待，取得名额后再按 A、B、C 偏好选择具体清洗店。</p>
+      <div class="codebox"><div class="codehead"><span>3.7(2) P99.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>QUE        STORAGE   3
+           GENERATE  8,5
+           ENTER     QUE
+           TRANSFER  BOTH,A,SEL
+SEL        TRANSFER  BOTH,B,C
+A          SEIZE     A_1
+           PRIORITY  1
+           ADVANCE   15,6
+           RELEASE   A_1
+           LEAVE     QUE
            TERMINATE
-DO_B       SEIZE    SHOP_B
-           PRIORITY 1
-           ADVANCE  15,6
-           RELEASE  SHOP_B
-           LEAVE    ALL_SHOPS
+B          SEIZE     B_1
+           PRIORITY  1
+           ADVANCE   15,6
+           RELEASE   B_1
+           LEAVE     QUE
            TERMINATE
-DO_C       SEIZE    SHOP_C
-           PRIORITY 1
-           ADVANCE  15,6
-           RELEASE  SHOP_C
-           LEAVE    ALL_SHOPS
+C          SEIZE     C_1
+           PRIORITY  1
+           ADVANCE   15,6
+           RELEASE   C_1
+           LEAVE     QUE
            TERMINATE
-
-           GENERATE 6000
+           GENERATE  60
            TERMINATE 1
-           START    1</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR$SHOP_A/B/C</td><td>三店各自利用率。</td></tr><tr><td>N$LOST（方案一）</td><td>因全忙离开的车辆数。</td></tr><tr><td>QT$Q_WAIT（方案二）</td><td>全忙时的平均等待时间。</td></tr></table>
+           START     100</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR1 / FR2 / FR3 或 FR$A_1/B_1/C_1</td><td>两套参考程序中三店各自利用率。</td></tr><tr><td>N$ADD4（方案一）</td><td>因三店全忙而离开的车辆数。</td></tr><tr><td>STORAGE QUE（方案二）</td><td>容量资源的利用与等待情况。</td></tr></table>
     </section>
 
     <section class="exercise" id="p38">
       <div class="exercise-title"><div class="exercise-no">3.8</div><div><h2>普通与急诊病人共享两位医生</h2><p>急诊优先，累计处理 1000 位病人后结束。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 03 · EXERCISE 3.8</small></div><p>某诊所有 2 个医生。普通病人以 8±5 分钟的速率到达，急诊病人以 22±10 分钟的速率到达。急诊病人具有优先级，可以优先服务，每次看病需 25±15 分钟，仿真处理 1000 位病人。</p></div>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_8.GPS · MINUTE</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.8 - two doctors, emergency priority; minute
-DOCTORS    STORAGE 2
-
-* Ordinary patients, priority 0.
-           GENERATE 8,5
-           QUEUE    Q_NORMAL
-           ENTER    DOCTORS
-           DEPART   Q_NORMAL
-           ADVANCE  25,15
-           LEAVE    DOCTORS
+      <div class="codebox"><div class="codehead"><span>3.8 P99.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>SER        STORAGE   2
+           GENERATE  8,5
+           QUEUE     Q_PT
+           ENTER     SER
+           DEPART    Q_PT
+           ADVANCE   25,15
+           LEAVE     SER
            TERMINATE 1
-
-* Emergency patients, priority 1.
-           GENERATE 22,10,,,1
-           QUEUE    Q_EMERGENCY
-           ENTER    DOCTORS
-           DEPART   Q_EMERGENCY
-           ADVANCE  25,15
-           LEAVE    DOCTORS
+           GENERATE  22,10
+           PRIORITY  1
+           QUEUE     Q_JZ
+           ENTER     SER
+           DEPART    Q_JZ
+           ADVANCE   25,15
+           LEAVE     SER
            TERMINATE 1
-
-           START    1000</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$DOCTORS</td><td>两位医生作为一组的利用率。</td></tr><tr><td>QT$Q_NORMAL / QT$Q_EMERGENCY</td><td>两类病人的平均等待时间，用于验证优先级效果。</td></tr></table>
+           START     1000</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$SER</td><td>两位医生作为一组的利用率。</td></tr><tr><td>QT$Q_PT / QT$Q_JZ</td><td>普通与急诊病人的平均等待时间。</td></tr></table>
     </section>
 
     <section class="exercise" id="p39">
@@ -469,274 +441,315 @@ LOST       TERMINATE 1
       <div class="exercise-title"><div class="exercise-no">3.12</div><div><h2>两个串联服务站与阻塞</h2><p>第一站 3 人，第二站 1 人；分别模拟无限队列与第二站仅 1 个等待位。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 03 · EXERCISE 3.12</small></div><p>顾客进入一个系统，要按序列经过两个服务站。第一站上有三位服务员，其服务质量相同，服务时间为 335±160 秒。第二站上只有一位服务员，服务时间为 110±75 秒，顾客以每隔 120±50 秒到达一位。如果站上服务员全忙，则顾客在相应的队列等待，要求按下列两种情况分别建立 GPSS World 模型，运行 24 小时，统计顾客逗留在系统中的平均时间情况：第一，假定两个队列的空间不受限制；第二，第二站上队列只有一个位置，已完成第一站服务的顾客发现第二站队列位置被占领时，不能离开第一站服务位置，即后面等待顾客不能进入第一站服务。</p></div>
       <h3>情况一：两队列空间无限</h3>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_12A.GPS · UNLIMITED QUEUES · SECOND</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.12A - two serial stations, unlimited queues; second
-STATION1   STORAGE 3
+      <div class="codebox"><div class="codehead"><span>3.12(1) P100.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>S_1        STORAGE   3
+S_2        STORAGE   1
 
-           GENERATE 120,50
-           QUEUE    Q_SYSTEM
-           QUEUE    Q1
-           ENTER    STATION1
-           DEPART   Q1
-           ADVANCE  335,160
-           LEAVE    STATION1
-
-           QUEUE    Q2
-           SEIZE    STATION2
-           DEPART   Q2
-           ADVANCE  110,75
-           RELEASE  STATION2
-           DEPART   Q_SYSTEM
+           GENERATE  120,50
+           QUEUE     1
+ADD1       QUEUE     Q_1
+           ENTER     S_1
+           ADVANCE   335,160
+           LEAVE     S_1
+           DEPART    Q_1
+ADD2       QUEUE     Q_2
+           ENTER     S_2
+           ADVANCE   110,75
+           LEAVE     S_2
+           DEPART    Q_2
+           DEPART    1
            TERMINATE
-
-           GENERATE 86400
+           GENERATE  3600
            TERMINATE 1
-           START    1</code></pre></div>
-      <h3>情况二：第二站只有一个等待位置，产生制造阻塞</h3><p>完成第一站服务后先申请 <code>WAIT2</code>。若唯一等待位被占用，事务阻塞在 <code>ENTER WAIT2</code> 前，仍占着第一站服务员，因此后续顾客不能进入该服务位置。</p>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_3_12B.GPS · BLOCKING AFTER SERVICE · SECOND</span><button class="copy">COPY</button></div><pre><code>* Exercise 3.12B - one waiting place before station 2; second
-STATION1   STORAGE 3
-WAIT2      STORAGE 1
+           START     24</code></pre></div>
+      <h3>情况二：第二站只有一个等待位置，产生制造阻塞</h3><p>参考答案把 <code>S_2</code> 设为容量 2，表示“第二站的 1 个服务位置 + 1 个等待位置”；事务取得该容量后第一站才释放，因此容量满时会继续占用第一站。</p>
+      <div class="codebox"><div class="codehead"><span>3.12(2) P100.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>S_1        STORAGE   3
+S_2        STORAGE   2
 
-           GENERATE 120,50
-           QUEUE    Q_SYSTEM
-           QUEUE    Q1
-           ENTER    STATION1
-           DEPART   Q1
-           ADVANCE  335,160
-
-* Still holds STATION1 while waiting for the single buffer position.
-           QUEUE    Q_BLOCK
-           ENTER    WAIT2
-           DEPART   Q_BLOCK
-           LEAVE    STATION1
-
-           QUEUE    Q2
-           SEIZE    STATION2
-           LEAVE    WAIT2
-           DEPART   Q2
-           ADVANCE  110,75
-           RELEASE  STATION2
-           DEPART   Q_SYSTEM
+           GENERATE  120,50
+           QUEUE     Q_1
+           ENTER     S_1
+           ADVANCE   335,160
+           ENTER     S_2
+           LEAVE     S_1
+           SEIZE     2
+           ADVANCE   110,75
+           RELEASE   2
+           LEAVE     S_2
+           DEPART    Q_1
            TERMINATE
-
-           GENERATE 86400
+           GENERATE  3600
            TERMINATE 1
-           START    1</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>QT$Q_SYSTEM</td><td>顾客在系统中的平均逗留时间。</td></tr><tr><td>QT$Q_BLOCK（情况二）</td><td>因第二站等待位已占而滞留在第一站服务位置的平均时间。</td></tr><tr><td>SR$STATION1, FR$STATION2</td><td>两站利用率；第二种模型可观察阻塞的连锁影响。</td></tr></table>
+           START     24</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>QT1 / QT$Q_1</td><td>两套参考模型中顾客的平均系统逗留时间。</td></tr><tr><td>SR$S_1 / SR$S_2</td><td>第一站资源，以及第二站服务与等待容量的使用情况。</td></tr><tr><td>FR2（情况二）</td><td>第二站单个服务员的利用率。</td></tr></table>
     </section>
 
     <div class="chapter-divider"><h2>第 4 章 · 中级 GPSS World 语言</h2><p>使用函数、保存值、动态实体编号、条件结束和非平稳到达过程完成综合系统建模。</p></div>
+
+    <section class="exercise" id="p41">
+      <div class="exercise-title"><div class="exercise-no">4.1</div><div><h2>定量订购库存系统</h2><p>再订货点 120、订货量 500，统计 100 天平均库存。</p></div></div>
+      <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.1</small></div><p>一库存系统采用定量订购法进行管理，即再订货点（最低订货点）为 120，每次订货 500，货物延迟 5±2 天到达。期初库存为 700。日需求量为服从均值为 50 的指数分布（取整数）。试对该系统仿真 100 天，求平均日库存量。</p></div>
+      <p>参考答案以容量 2000 的存储器 <code>KCL</code> 表示库存：每日需求从中扣减；独立补货事务等待库存低于 120，延迟 5±2 天后补入 500。</p>
+      <div class="codebox"><div class="codehead"><span>4.1 P131.GPS · 参考答案</span><button class="copy">COPY</button></div><pre><code>KCL        STORAGE   2000
+           GENERATE  1
+           ASSIGN    1,(INT(EXPONENTIAL(1,0,50)))
+           TEST GE   S$KCL,P1
+           LEAVE     KCL,P1
+           TERMINATE
+
+           GENERATE  ,,,1
+           ENTER     KCL,700
+AGN        TEST L    S$KCL,120
+           ADVANCE   5,2
+           ENTER     KCL,500
+           TRANSFER  ,AGN
+
+           GENERATE  1
+           TERMINATE 1
+           START     100</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SA$KCL</td><td>100 天内的时间加权平均库存，即题目要求的平均日库存量。</td></tr><tr><td>S$KCL</td><td>仿真结束时库存，仅用于核对。</td></tr></table>
+    </section>
 
     <section class="exercise" id="p42">
       <div class="exercise-title"><div class="exercise-no">4.2</div><div><h2>三工序纺织工厂</h2><p>正确表示三处库存、期初在制品、并行机器和每 16 小时一次的成品调运。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.2</small></div><p>一个纺织工厂通过三道工序生产优质的马海毛纱。第一道工序在 5 个减压器框架中将纺纱压缩到合适的厚度。第二道工序是在 40 个细纱机中纺纱。最后一道工序是在 8 个线圈框架上将纱线成批地从纺纱线轴缠绕到锥体上。假设原材料的到达速率为每单位 12 分钟。减压器框架生产一单位需要 38±12 分钟，细纱机和线圈框架生产一单位时间分别为 320±120 分钟和 64±24 分钟。第一道和第二道工序间的初始压缩材料为 100 单位，第二道和第三道工序间的纱材料为 50 单位，第三道工序后的成品纱为 50 单位。完成的材料用 200 单位能力的货柜来装，每 16 小时被调运一次。仿真纺织工厂生产 800 小时的情况，确定这三种机器的使用率，找出生产过程中压缩材料、纱材料和成品纱的平均库存。</p></div>
 
-      <table><tr><th>现实对象</th><th>GPSS 表示</th><th>作用</th></tr><tr><td>每单位原料/在制品</td><td>活动实体</td><td>依次经历三道加工。</td></tr><tr><td>5 个减压器、40 个细纱机、8 个线圈架</td><td>容量 5、40、8 的存储器</td><td>表示同质并行机器并取得组利用率。</td></tr><tr><td>三处材料库存</td><td>三个大容量存储器</td><td>AVE.CONT. 即时间加权平均库存。</td></tr><tr><td>16 小时货柜</td><td>周期控制事务</td><td>每次装走最多 200 单位成品。</td></tr></table>
+      <table><tr><th>现实对象</th><th>参考答案中的 GPSS 表示</th><th>作用</th></tr><tr><td>每单位原料/在制品</td><td>活动实体</td><td>依次经历三道加工。</td></tr><tr><td>5 个减压器、40 个细纱机、8 个线圈架</td><td><code>JQ1/JQ2/JQ3 STORAGE</code></td><td>表示同质并行机器并取得组利用率。</td></tr><tr><td>三处材料库存</td><td><code>KC1_2/KC2_3/KC3_4</code> 队列</td><td>用 QUEUE 报告的平均队长读取平均库存。</td></tr><tr><td>16 小时货柜</td><td>周期控制事务</td><td>每次从成品队列调走最多 200 单位。</td></tr></table>
       <div class="flow"><span>原料到达<br>12 min/单位</span><i>→</i><span>5×减压器<br>38±12</span><i>→</i><span>压缩材料库存</span><i>→</i><span>40×细纱机<br>320±120</span><i>→</i><span>纱材料库存</span><i>→</i><span>8×线圈架<br>64±24</span><i>→</i><span>成品库存<br>16 h 调运</span></div>
-      <ol class="steps"><li>统一用分钟：800 小时为 <code>48000</code> 分钟，16 小时为 <code>960</code> 分钟。</li><li>上道工序完成后进入库存，下道机器真正取得后才离开库存，使等待机器的物料仍计入库存。</li><li>100、50、50 单位期初材料分别从对应库存或后续工序入口启动。</li><li>货柜到点装走 <code>min(200, 当前成品库存)</code>，不足 200 时不能等待凑满。</li></ol>
-      <div class="formula">平均库存 = ∫库存量(t)dt ÷ 48000；STORAGE 报告的 AVE.CONT. 已自动完成时间加权。</div>
+      <ol class="steps"><li>参考答案统一用分钟：调运周期为 <code>960</code> 分钟；另用每 60 分钟出现一次、使终止计数减 1 的控制事务，<code>START 800</code> 因而正好运行 800 小时。</li><li>三道工序分别用容量 5、40、8 的 STORAGE；每个活动实体进入机器组后延时，再释放容量。</li><li>库存采用 QUEUE 建模：上一工序结束时 <code>QUEUE</code>，下一工序获得机器后 <code>DEPART</code>，因此等待加工的材料会持续计入库存。</li><li>期初 100、50、50 个活动实体分别直接转入三个库存入口；调运事务用 <code>DEPART KC3_4,200</code> 或当前全部库存完成装箱。</li></ol>
+      <div class="formula">平均库存 = ∫库存量(t)dt ÷ 仿真时间；在本解中直接读取 QUEUE 报告的 AVE.CONT.（标准数值属性为 QA$队列名）。</div>
 
-      <div class="codebox"><div class="codehead"><span>EXERCISE_4_2.GPS · MINUTE</span><button class="copy">COPY</button></div><pre><code>* Exercise 4.2 - textile factory; time unit: minute
-PRESSERS  STORAGE 5
-SPINNERS  STORAGE 40
-WINDERS   STORAGE 8
-
-BUF12     STORAGE 1000000
-BUF23     STORAGE 1000000
-FINISHED  STORAGE 1000000
-
-* Raw-material units; priority 2 settles endpoint events before shipping/end.
-           GENERATE 12,,,,2
-STAGE1     ENTER    PRESSERS
-           ADVANCE  38,12
-           LEAVE    PRESSERS
-           ENTER    BUF12
-
-STAGE2     ENTER    SPINNERS
-           LEAVE    BUF12
-           ADVANCE  320,120
-           LEAVE    SPINNERS
-           ENTER    BUF23
-
-STAGE3     ENTER    WINDERS
-           LEAVE    BUF23
-           ADVANCE  64,24
-           LEAVE    WINDERS
-           ENTER    FINISHED
-           SAVEVALUE PRODUCED+,1
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_2.GPS · MINUTE · 按参考答案</span><button class="copy">COPY</button></div><pre><code>JQ1        STORAGE   5
+JQ2        STORAGE   40
+JQ3        STORAGE   8
+;KC1_2     STORAGE   1000
+;KC2_3     STORAGE   1000
+;KC3_4     STORAGE   1000
+           GENERATE  12
+           ENTER     JQ1
+           ADVANCE   38,12
+           LEAVE     JQ1
+SC1_2      QUEUE     KC1_2       ;ENTER KC1_2
+           ENTER     JQ2
+           DEPART    KC1_2       ;LEAVE KC1_2
+           ADVANCE   320,120
+           LEAVE     JQ2
+SC2_3      QUEUE     KC2_3       ;ENTER KC2_3
+           ENTER     JQ3
+           DEPART    KC2_3       ;LEAVE KC2_3
+           ADVANCE   64,24
+           LEAVE     JQ3
+SC3_4      QUEUE     KC3_4       ;ENTER KC3_4
            TERMINATE
 
-* Initial 100 units between stages 1 and 2.
-           GENERATE ,,,100,2
-           ENTER    BUF12
-           TRANSFER ,STAGE2
-
-* Initial 50 units between stages 2 and 3.
-           GENERATE ,,,50,2
-           ENTER    BUF23
-           TRANSFER ,STAGE3
-
-* Initial 50 finished units.
-           GENERATE ,,,1,2
-           ENTER    FINISHED,50
+           GENERATE  960
+           TEST GE   Q$KC3_4,200,NXT
+           DEPART    KC3_4,200    ;LEAVE KC3_4
+           TERMINATE
+NXT        DEPART    KC3_4,Q$KC3_4 ;LEAVE KC3_4,Q$KC3_4
            TERMINATE
 
-* A container departs every 960 minutes; capacity is 200 units.
-           GENERATE 960,,,,1
-           TEST GE  S$FINISHED,200,PARTLOAD
-           LEAVE    FINISHED,200
-           SAVEVALUE SHIPPED+,200
+           GENERATE  ,,,100
+           TRANSFER  ,SC1_2
+           GENERATE  ,,,50
+           TRANSFER  ,SC2_3
+           GENERATE  ,,,50
+           TRANSFER  ,SC3_4
            TERMINATE
 
-PARTLOAD   TEST G   S$FINISHED,0,NOLOAD
-           ASSIGN   LOAD,S$FINISHED
-           LEAVE    FINISHED,P$LOAD
-           SAVEVALUE SHIPPED+,P$LOAD
-NOLOAD     TERMINATE
-
-* 800 hours = 48000 minutes.
-           GENERATE 48000
+           GENERATE  60
            TERMINATE 1
-           START    1</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$PRESSERS / SPINNERS / WINDERS</td><td>三组机器使用率，对应 STORAGE 表的 UTIL.。</td></tr><tr><td>SA$BUF12 / BUF23 / FINISHED</td><td>压缩材料、纱材料、成品纱的平均库存，对应 AVE.CONT.。</td></tr><tr><td>S$BUF12 等</td><td>结束瞬间库存，不要误当作平均库存。</td></tr><tr><td>X$PRODUCED / X$SHIPPED</td><td>辅助核对累计生产量和调运量。</td></tr></table>
+           START     800</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$JQ1 / SR$JQ2 / SR$JQ3</td><td>三组机器的使用率，对应 STORAGE 报告的 UTIL.。</td></tr><tr><td>QA$KC1_2 / QA$KC2_3 / QA$KC3_4</td><td>压缩材料、纱材料、成品纱的时间加权平均库存。</td></tr><tr><td>Q$KC1_2 等</td><td>某一时刻（包括结束时刻）的库存量，不要误当成平均库存。</td></tr></table>
     </section>
 
     <section class="exercise" id="p43">
       <div class="exercise-title"><div class="exercise-no">4.3</div><div><h2>三级燃油加油站</h2><p>服务时间由燃油类别、订单量和开始装油时的站内车辆数共同决定。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.3</small></div><p>某一个加油站能够配给三个级别的燃油：①家庭取暖用的燃油；②轻工业用的燃油；③运输用的燃油。每一级别的燃油都有一个对应的油泵。订单中燃油的数量在 3000 加仑和 5000 加仑中变化，每次增加 10 加仑，是均匀分布。这个站点最多能容纳 12 辆车。来加油站装油的汽车到达的平均时间间隔是 18 分钟（服从指数分布），仿真加油站 5 天的运营情况。假设车辆加满油所需的时间由以下因素决定：</p><p>（1）油泵效率（对①②③这三种油分别为每 1000 加仑需要 6、5 和 7 分钟）；（2）订单的大小；（3）开始加油时站点已容纳的车辆数量（每一辆车需要额外的 30 秒）；（4）两分钟的准备和安装时间。</p></div>
       <div class="formula">T(g,q,n) = 2 + k(g) × q ÷ 1000 + 0.5 × n（分钟）</div>
-      <ul><li>到达间隔使用均值 18 分钟的指数分布。</li><li>订单量为 <code>3000 + 10 × (RN3 mod 201)</code>，得到 3000、3010、…、5000。</li><li><code>S$SITE</code> 在取得油泵、开始装油时求值，符合题目规定的计时点。</li><li>题面没有给三类燃油的需求比例，程序明确采用各 <code>1/3</code>；如教师另有给定，只需修改类别随机分配。</li></ul>
-      <div class="callout warn"><strong>容量口径：</strong>题面只说站点最多容纳 12 辆，未写“站满即离开”，因此模型让额外车辆在站外等待，并用 <code>Q_OUTSIDE</code> 统计；若课程要求流失，应改为满员分支计数。</div>
+      <ul><li>参考答案用 <code>S_JY STORAGE 12</code> 表示站点最多容纳 12 辆车；等待进入存储器的车辆会形成 STORAGE 的延迟链。</li><li><code>FN_GRADE</code> 以相同概率返回 6、5、7，直接代表三种油每 1000 加仑所需分钟数。</li><li><code>3000+RN1@201#10</code> 产生 3000、3010、…、5000 加仑的离散均匀订单量。</li><li>整个服务时间写在一个表达式中：订单量对应的泵送时间，加当前站内车辆数每辆 0.5 分钟，再加 2 分钟准备时间。</li></ul>
+      <div class="callout warn"><strong>以参考答案为准：</strong>截图程序把指数到达均值写为 6 分钟，并以每 60 分钟一个终止控制实体、<code>START 120</code> 运行 120 小时。它与题面“平均 18 分钟”并不一致；本页按你给出的正确答案原样覆盖，不擅自改回 18。</div>
 
-      <div class="codebox"><div class="codehead"><span>EXERCISE_4_3.GPS · MINUTE</span><button class="copy">COPY</button></div><pre><code>* Exercise 4.3 - fuel station; time unit: minute
-* The problem gives no grade mix; grades 1, 2 and 3 are equiprobable.
-EFF        FUNCTION P$GRADE,D3
-1,6/2,5/3,7
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_3.GPS · MINUTE · 按参考答案</span><button class="copy">COPY</button></div><pre><code>FN_GRADE   FUNCTION  RN1,D3
+0.3333,6/0.6667,5/1,7
 
-SITE       STORAGE 12
+S_JY       STORAGE   12
+           GENERATE  (EXPONENTIAL(1,0,6))
+           QUEUE     GAS
+           ENTER     S_JY
+           ADVANCE   ((3000+RN1@201#10)#FN$FN_GRADE/1000+0.5#S$S_JY+2)
+           LEAVE     S_JY
+           DEPART    GAS
+           TERMINATE
+           GENERATE  60
+           TERMINATE 1
+           START     120</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$S_JY</td><td>站点 12 个并行服务位置的总体使用率。</td></tr><tr><td>SA$S_JY / SM$S_JY</td><td>站内平均、最大车辆数。</td></tr><tr><td>QA$GAS / QT$GAS / QM$GAS</td><td>平均排队车辆数、平均等待时间和最大排队车辆数。</td></tr></table>
+    </section>
 
-           GENERATE (EXPONENTIAL(1,0,18))
-           SAVEVALUE ARRIVED+,1
-           ASSIGN   GRADE,(1+RN2@3)
-           ASSIGN   AMOUNT,(3000+10#(RN3@201))
+    <section class="exercise" id="p44">
+      <div class="exercise-title"><div class="exercise-no">4.4</div><div><h2>银行四个独立柜台</h2><p>随机业务类别、最短队列选择、预热一小时后统计八小时。</p></div></div>
+      <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.4</small></div><p>一家银行的对外柜台有 4 位职员，每个职员台前可独立排队，顾客选择较短的队列。顾客有 4 类业务：第 1、2、3、4 类业务的频率分别为 0.4、0.1、0.2、0.3，服务时间分别为 120±60、400±150、600±200、200±120 秒。顾客到达服从指数分布，平均间隔 150 秒。统计 4 位职员的利用率；模型先预热 1 小时，再仿真 8 小时。</p></div>
+      <ol class="steps"><li><code>TYPE</code> 按累计概率把顾客分为 1～4 类；<code>MEAN</code> 和 <code>DEF</code> 再用 P1 查出相应服务均值和半区间。</li><li><code>SELECT MIN DL,1,4,,Q</code> 把最短队列编号写入动态参数 DL，后续用 <code>P$DL</code> 间接引用同名队列与设施。</li><li><code>START 1,NP</code> 先运行到预热控制实体，不打印报告；<code>RESET</code> 清零统计但保留系统状态，然后 <code>START 8</code> 收集八个一小时区间。</li></ol>
+      <div class="callout warn"><strong>以参考答案为准：</strong>截图中的指数均值为 50 秒，与题面 150 秒不同；下面代码保留截图值。</div>
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_4.GPS · SECOND · 按参考答案</span><button class="copy">COPY</button></div><pre><code>TYPE       FUNCTION  RN1,D4
+0.4,1/0.5,2/0.7,3/1,4
+MEAN       FUNCTION  P1,D4
+1,120/2,400/3,600/4,200
+DEF        FUNCTION  P1,D4
+1,60/2,150/3,200/4,120
+           GENERATE  (EXPONENTIAL(1,0,50))
+           ASSIGN    1,FN$TYPE
+           SELECT MIN DL,1,4,,Q
+           QUEUE     P$DL
+           SEIZE     P$DL
+           ASSIGN    2,FN$DEF
+           ADVANCE   FN$MEAN,P2
+           RELEASE   P$DL
+           DEPART    P$DL
+           TERMINATE
+           GENERATE  3600
+           TERMINATE 1
+           START     1,NP
+           RESET
+           START     8</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR1～FR4</td><td>四位职员各自的利用率。</td></tr><tr><td>QA1～QA4 / QT1～QT4</td><td>四条队列的平均人数与平均等待时间。</td></tr></table>
+    </section>
 
-* Vehicles beyond the 12-space site wait outside.
-           QUEUE    Q_OUTSIDE
-           ENTER    SITE
-           DEPART   Q_OUTSIDE
-
-* Facilities 1, 2 and 3 are the three dedicated pumps.
-           QUEUE    P$GRADE
-           SEIZE    P$GRADE
-           DEPART   P$GRADE
-           ADVANCE  (2+FN$EFF#P$AMOUNT/1000+0.5#S$SITE)
-           RELEASE  P$GRADE
-           LEAVE    SITE
-
-* Savevalues 1..3 count completed orders by grade; 20 totals gallons.
-           SAVEVALUE P$GRADE+,1
-           SAVEVALUE 20+,P$AMOUNT
-           SAVEVALUE COMPLETED+,1
+    <section class="exercise" id="p45">
+      <div class="exercise-title"><div class="exercise-no">4.5</div><div><h2>儿童宇宙飞船开门控制</h2><p>30 人满载或开门满 5 分钟即发车，并统计八小时内的运营场数。</p></div></div>
+      <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.5</small></div><p>一个儿童游乐中心的宇宙飞船每次容纳 30 位儿童，每场运行 15 分钟。入场口只有一道门；若儿童到达时飞船正在运行，则在门外排队。运行结束门打开。每当进入的儿童达到 30 名，或者门打开已经 5 分钟，门就关闭并开始运行。游乐中心 8 点营业，初始门打开，儿童到达间隔服从均值 40 秒的指数分布。仿真 8 小时并统计运营场数。</p></div>
+      <div class="callout warn"><strong>以参考答案为准：</strong>截图把指数到达均值写为 20 秒，而题面为 40 秒；下面仍按截图保留 <code>EXPONENTIAL(1,0,20)</code>。</div>
+      <ol class="steps"><li>儿童事务在队列 1 等待；<code>GATE LS DOOR</code> 只有门打开时才允许进入，<code>X1</code> 累计本场人数。</li><li>优先级 2 的唯一控制事务反复执行 <code>AGN</code> 循环：人数到 30 或距开门 300 秒时关门。</li><li>关门后要等到恰好 30 人进入或队列已经空，再开门；随后运行 900 秒，记录新的开门时刻并令 <code>NUM</code> 加 1。</li><li>这里必须有控制实体，因为“到时关门、运行结束再开门”是主动改变逻辑开关的事件，仅让顾客流经过 <code>GENERATE</code> 不能替代这条控制时间线。</li></ol>
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_5.GPS · SECOND · 按参考答案</span><button class="copy">COPY</button></div><pre><code>           GENERATE  (EXPONENTIAL(1,0,20))
+NXT        QUEUE     1
+           GATE LS   DOOR
+           SAVEVALUE 1+,1
+           DEPART    1
+           ADVANCE   900
            TERMINATE
 
-* Five 24-hour days = 7200 minutes.
-           GENERATE 7200
+           GENERATE  ,,,1,2
+           ASSIGN    TM,0
+AGN        TEST E    ((Q1&gt;=30) | (C1-P$TM&gt;=300)),1
+           LOGIC S   DOOR
+           TEST E    ((X1=30) | (Q1=0)),1
+           LOGIC R   DOOR
+           SAVEVALUE 1,0
+           ADVANCE   900
+           ASSIGN    TM,C1
+           SAVEVALUE NUM+,1
+           TRANSFER  ,AGN
+
+           GENERATE  1
            TERMINATE 1
-           START    1</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR1 / FR2 / FR3</td><td>三台专用油泵利用率。</td></tr><tr><td>QA1..3 / QT1..3</td><td>各油泵平均队长和平均等待时间。</td></tr><tr><td>SA$SITE / SM$SITE</td><td>站内平均、最大车辆数；最大值不超过 12。</td></tr><tr><td>QT$Q_OUTSIDE</td><td>站内容量约束造成的站外等待。</td></tr><tr><td>X1..X3 / X20</td><td>三类完成订单数和累计装油量。</td></tr></table>
+           START     28800</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>X$NUM</td><td>完成记录的运营场数。</td></tr><tr><td>QA1 / QT1 / QM1</td><td>儿童平均队长、平均等待时间和最大队长。</td></tr><tr><td>X1</td><td>结束时正在组织的这一场已经进入的人数。</td></tr></table>
     </section>
 
     <section class="exercise" id="p46">
       <div class="exercise-title"><div class="exercise-no">4.6</div><div><h2>停车—购物—付款系统</h2><p>综合处理停车流失、购物篮/车等待、18 个柜台选择和营业结束后的系统清空。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 04 · EXERCISE 4.6</small></div><p>顾客乘车去超市购物。停车场共能容纳 650 辆车。如果一个顾客没有找到停车位，就选择离开。一个顾客从停车场走到超市需要花费 60 秒。每个顾客选购 5～100 件（均匀分布）商品。若顾客选购商品数不超过 10 件（含 10 件），则会使用购物篮（总共提供 70 个购物篮）；如选购件数超过 10 件，则使用购物车（共提供 650 辆购物车）；若没有购物车或购物篮则等待。每个顾客的消费时间取决于选购数量（每件商品花费 10 秒钟）。有 18 个付款台，其中 1 号为特快付款台，2～18 号为普通付款台。购物数量大于 10 件的顾客总是选择 17 个普通付款台中队列最短的去付款。购物数量不大于 10 件的顾客可选择特快付款台，也可选择普通付款台；当特快付款台中队列长度大于普通付款台中的最短队列的 2.5 倍时，选择普通付款台中的最短队列，否则选择特快付款台。付款时间为每件商品 2 秒外加 25、30、35 秒，外加时间取决于付款方式（消费卡、现金或者信用卡，三种方式概率相同，均为 33.3%）。付款后，顾客花费 60 秒走至停车处，装车离开停车场。</p><p>假设顾客在营业时间内到达的时间间隔符合指数分布，但均值随时间变化，如表 4.9 所示。超市每天营业 12 小时，在营业时间内到达的顾客全部购物完成后才能关门，仿真一天的营业情况。</p><table><caption>表 4.9　顾客到达时间间隔随时间变化的情况</caption><tr><th>时间段（分钟）</th><th>0～30</th><th>30～90</th><th>90～150</th><th>660～690</th><th>690+</th></tr><tr><td>到达速率（人/时）</td><td>300</td><td>600</td><td>800</td><td>600</td><td>300</td></tr></table></div>
-      <div class="callout warn"><strong>表 4.9 的缺口：</strong>教材表格从 90～150 分直接跳到 660～690 分。程序按最自然的连续解释，将 90～660 分均视为 800 人/时；如教师给出其他口径，只需调整 <code>ARRMEAN</code> 数据行。</div>
+      <div class="callout warn"><strong>参考答案的函数写法：</strong><code>FN_USE FUNCTION C1,D5</code> 直接按仿真时钟返回指数到达均值；它把 90～660 分这一未逐格列出的区间延续为 4.5 秒。</div>
       <table><tr><th>营业时段</th><th>秒区间</th><th>速率</th><th>指数均值</th></tr><tr><td>0～30 分</td><td>0～1800</td><td>300 人/时</td><td>12 秒</td></tr><tr><td>30～90 分</td><td>1800～5400</td><td>600 人/时</td><td>6 秒</td></tr><tr><td>90～660 分</td><td>5400～39600</td><td>800 人/时</td><td>4.5 秒</td></tr><tr><td>660～690 分</td><td>39600～41400</td><td>600 人/时</td><td>6 秒</td></tr><tr><td>690～720 分</td><td>41400～43200</td><td>300 人/时</td><td>12 秒</td></tr></table>
       <div class="flow"><span>营业判断</span><i>→</i><span>停车位<br>满则离开</span><i>→</i><span>步行 60s</span><i>→</i><span>5～100 件</span><i>→</i><span>篮/车<br>无资源则等</span><i>→</i><span>购物<br>10s/件</span><i>→</i><span>选择柜台</span><i>→</i><span>付款</span><i>→</i><span>归还篮/车</span><i>→</i><span>步行 60s<br>离开</span></div>
-      <ol class="steps"><li>先在 2～18 号普通柜台中选择最短队列，把柜台号保存到参数 <code>COUNTER</code>。</li><li>商品数大于 10 时必去普通柜台；小件顾客只有在特快队列严格大于最短普通队列的 2.5 倍时才改去普通柜台。</li><li>43200 秒时只关闭营业入口，不立即终止；等待 <code>N$ADMIT=N$DONE</code> 后才真正关门。</li><li>停车位、篮/车和付款台均在顾客离开前正确释放，保留全部标准报告数据。</li></ol>
+      <ol class="steps"><li><code>GATE SNF CAR,OUT</code> 使停车场已满的顾客直接离开；成功停车者进入 <code>HAH</code> 队列，以便统计从停车到购物完成的时间。</li><li>P1 保存商品件数。P1≤10 时取得购物篮，P1&gt;10 时转到 <code>CHOSE</code> 取得购物车；二者都在付款完成后释放。</li><li><code>SELECT MIN 2,2,18,,Q</code> 把普通柜台最短队列号写入 P2。小件顾客再比较特快柜台 Q1 与该最短普通队列的 2.5 倍，必要时把 P2 改为 1。</li><li>营业 12 小时的控制实体关闭 LS1；<code>TEST E N$SSSS,N$EEEE</code> 等待已停车顾客全部离场后才结束模型。</li></ol>
 
-      <div class="codebox"><div class="codehead"><span>EXERCISE_4_6.GPS · SECOND</span><button class="copy">COPY</button></div><pre><code>* Exercise 4.6 - supermarket; time unit: second
-* Table 4.9 is interpreted as 800 persons/hour from minute 90 to 660.
-ARRMEAN    FUNCTION C1,D5
-1800,12/5400,6/39600,4.5/41400,6/43200,12
+      <div class="codebox"><div class="codehead"><span>EXERCISE_4_6.GPS · SECOND · 按参考答案</span><button class="copy">COPY</button></div><pre><code>FN_USE     FUNCTION  C1,D5
+30#60,12/90#60,6/660#60,4.5/690#60,6/720#60,12
+FN_CHOSE   FUNCTION  RN1,D3
+0.333,25/0.666,30/1,35
+T_BAR      QTABLE    HAH,0,1800,40
+CAR        STORAGE   650
+GOUWU_LAN  STORAGE   70
+GOUWU_CHE  STORAGE   650
 
-PAYADD     FUNCTION RN3,D3
-0.333333,25/0.666667,30/1,35
+           INITIAL   LS1
+           GENERATE  (EXPONENTIAL(1,0,FN$FN_USE))
+           GATE LS   1,OUT
+           GATE SNF  CAR,OUT
+           QUEUE     HAH
+SSSS       ENTER     CAR
+           ADVANCE   60
+           ASSIGN    1,(5+RN1@96)
+           TEST LE   P1,10,CHOSE
+           ENTER     GOUWU_LAN
+           ADVANCE   (P1#10)
+           SELECT MIN 2,2,18,,Q
+           TEST LE   Q1,(2.5#(Q*2)),BUY
+           ASSIGN    2,1
+BUY        QUEUE     P2
+           SEIZE     P2
+           ADVANCE   (2#P1+FN$FN_CHOSE)
+           RELEASE   P2
+           DEPART    P2
+OK         LEAVE     GOUWU_LAN
+           TRANSFER  ,FINISH
+CHOSE      ENTER     GOUWU_CHE
+           ADVANCE   (P1#10)
+           SELECT MIN 2,2,18,,Q
+           QUEUE     P2
+           SEIZE     P2
+           ADVANCE   (2#P1+FN$FN_CHOSE)
+           RELEASE   P2
+           DEPART    P2
+           LEAVE     GOUWU_CHE
+FINISH     DEPART    HAH
+           ADVANCE   60
+EEEE       LEAVE     CAR
+OUT        TERMINATE
 
-PARK       STORAGE 650
-BASKETS    STORAGE 70
-CARTS      STORAGE 650
-
-           INITIAL  LS$OPEN
-
-* Customer-arrival process.
-           GENERATE (EXPONENTIAL(1,0,FN$ARRMEAN))
-           GATE LS  OPEN,TOO_LATE
-ADMIT      SAVEVALUE ARRIVED+,1
-
-* Parking full: leave immediately.
-           GATE SNF PARK,NO_PARK
-           ENTER    PARK
-           ADVANCE  60
-
-* Uniform integer number of items: 5..100.
-           ASSIGN   ITEMS,(5+RN2@96)
-           TEST LE  P$ITEMS,10,GET_CART
-
-           QUEUE    Q_BASKET
-           ENTER    BASKETS
-           DEPART   Q_BASKET
-           TRANSFER ,SHOP
-
-GET_CART   QUEUE    Q_CART
-           ENTER    CARTS
-           DEPART   Q_CART
-
-SHOP       ADVANCE  (10#P$ITEMS)
-
-* Find the shortest ordinary queue among counters 2..18.
-           SELECT MIN COUNTER,2,18,,Q
-           TEST G   P$ITEMS,10,SMALL
-           TRANSFER ,JOINPAY
-
-* Small customer uses ordinary only when Q1 > 2.5 * shortest ordinary Q.
-SMALL      TEST G   Q1,(2.5#Q*COUNTER),EXPRESS
-           TRANSFER ,JOINPAY
-EXPRESS    ASSIGN   COUNTER,1
-
-* Queue length includes the customer currently paying, as in Example 4.7.
-JOINPAY    QUEUE    P$COUNTER
-           SEIZE    P$COUNTER
-           ADVANCE  (2#P$ITEMS+FN$PAYADD)
-           RELEASE  P$COUNTER
-           DEPART   P$COUNTER
-
-           SAVEVALUE P$COUNTER+,1
-           SAVEVALUE SOLDITEMS+,P$ITEMS
-
-* Return the basket/cart only after payment.
-           TEST LE  P$ITEMS,10,RETURN_CART
-           LEAVE    BASKETS
-           TRANSFER ,WALK_BACK
-RETURN_CART LEAVE   CARTS
-
-WALK_BACK  ADVANCE  60
-           LEAVE    PARK
-           SAVEVALUE COMPLETED+,1
-           TRANSFER ,DONE
-
-NO_PARK    SAVEVALUE LOSTPARK+,1
-           TRANSFER ,DONE
-
-DONE       SAVEVALUE ACCOUNTED+,1
-           TERMINATE
-TOO_LATE   TERMINATE
-
-* Close admission at 12 hours, then wait for all admitted customers.
-           GENERATE 43200,,,1,127
-           LOGIC R  OPEN
-           TEST E   N$ADMIT,N$DONE
+           GENERATE  (720#60),,,2
+           LOGIC R   1
+           TEST E    N$SSSS,N$EEEE
            TERMINATE 1
-           START    1</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$PARK / SA$PARK / SM$PARK</td><td>停车场使用率、平均占用和最大占用。</td></tr><tr><td>SR$BASKETS / SR$CARTS</td><td>购物篮和购物车使用率及相应等待。</td></tr><tr><td>FR1..18 / QA1..18 / QT1..18</td><td>18 个付款台的利用率、平均队长和平均等待时间。</td></tr><tr><td>X$LOSTPARK</td><td>未找到停车位而离开的顾客数。</td></tr><tr><td>X1..18 / X$SOLDITEMS</td><td>各付款台完成顾客数与累计售出商品数。</td></tr><tr><td>END TIME</td><td>营业入口关闭并清空系统后的真正关门时刻。</td></tr></table>
+           START     1</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>SR$CAR / SA$CAR / SM$CAR</td><td>停车场使用率、平均占用和最大占用。</td></tr><tr><td>SR$GOUWU_LAN / SR$GOUWU_CHE</td><td>购物篮和购物车使用率；延迟链给出资源不足时的等待。</td></tr><tr><td>FR1～FR18 / QA1～QA18 / QT1～QT18</td><td>18 个付款台的利用率、平均队长和平均等待时间。</td></tr><tr><td>QTABLE T_BAR</td><td>从进入 HAH 队列到购物付款完成的时间分布。</td></tr><tr><td>N$SSSS 与 N$EEEE</td><td>成功停车人数和已离开停车场人数；二者相等才真正关门。</td></tr></table>
+    </section>
+
+    <section class="exercise" id="eg48">
+      <div class="exercise-title"><div class="exercise-no">例 4.8</div><div><h2>保存值方案的四油罐加油站</h2><p>作为参考答案截图中附带的补充例题，重点解释动态参数 P1/P2 与油量保存位置。</p></div></div>
+      <div class="problem"><div class="problem-head"><span>教材例题参考</span><small>CHAPTER 04 · EXAMPLE 4.8</small></div><p>加油站有 4 个容量为 1000 升的油罐，各有一个出油装置。车辆选择最短队列，每次加油 20±10 升，加油时间为油量的 1.5 倍；加油后在唯一收费窗口交费 5±2 分钟。工人每小时巡查油罐，余量低于 150 升时补满。下面是你提供的“用存储器表示油量”参考写法。</p></div>
+      <ol class="steps"><li><code>SELECT MIN 1,1,4,,Q</code> 把所选油罐/队列编号存入 P1，所以后面的 <code>QUEUE P1</code>、<code>SEIZE P1</code> 都是“使用编号为 P1 的对象”，不是说 P1 本身就是油量。</li><li>P2 才保存本车加油量。<code>LEAVE P1,P2</code> 表示从编号 P1 的 STORAGE 中取出 P2 个容量单位，也就是油罐余量减少 P2 升。</li><li>在巡检支路中，S1～S4 是四个 STORAGE 当前内容；余量低于 150 时用 ENTER 补回缺少的容量。P1 是活动实体私有参数，S1～S4 是模型中的共享油量状态，二者职责不同。</li></ol>
+      <div class="codebox"><div class="codehead"><span>EXAMPLE_4_8.GPS · 按参考答案</span><button class="copy">COPY</button></div><pre><code>QQQ        FUNCTION  RN1,C2
+0,10/1,30
+STR1       EQU       1
+STR2       EQU       2
+STR3       EQU       3
+STR4       EQU       4
+STR1       STORAGE   1000
+STR2       STORAGE   1000
+STR3       STORAGE   1000
+STR4       STORAGE   1000
+
+           GENERATE  8,5
+           ASSIGN    2,FN$QQQ
+           SELECT MIN 1,1,4,,Q
+ADD_Q      QUEUE     P1
+           SEIZE     P1
+           DEPART    P1
+           TEST GE   S*1,P2
+           LEAVE     P1,P2
+           ADVANCE   (1.5#P2)
+           RELEASE   P1
+           QUEUE     Q_JF
+           SEIZE     S_JF
+           DEPART    Q_JF
+           ADVANCE   5,2
+           RELEASE   S_JF
+           TERMINATE
+
+           GENERATE  60
+           TEST L    S1,150,ADD_JY2
+           ENTER     1,(1000-S1)
+ADD_JY2    TEST L    S2,150,ADD_JY3
+           ENTER     2,R2
+ADD_JY3    TEST L    S3,150,ADD_JY4
+           ENTER     3,R3
+ADD_JY4    TEST L    S4,150,ADD_BYE
+           ENTER     4,R4
+ADD_BYE    TERMINATE 1
+           START     200</code></pre></div>
+      <div class="callout"><strong>一句话辨析：</strong>P1 是“这辆车选中了第几号油罐”的编号；P2 是“这辆车要加多少油”；S1～S4 才是四个油罐的实时剩余油量。</div>
     </section>
 
     <div class="chapter-divider"><h2>第 5 章 · 高级 GPSS World 语言</h2><p>使用复制/装配、循环、表格和用户链完成并行部件生产与 EDD 订单调度。</p></div>
@@ -744,110 +757,77 @@ TOO_LATE   TERMINATE
     <section class="exercise" id="p54">
       <div class="exercise-title"><div class="exercise-no">5.4</div><div><h2>三部件并行生产、返工与装配</h2><p>每份订单复制成 3 个同装配集部件；全部检验合格后才能装配机器。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 05 · EXERCISE 5.4</small></div><p>某工厂生产一件机器，由 3 个部件组成，分别由 3 个车间生产。部件生产完后送检验部检验试装，若不合格要求退回车间重新加工（需要重新加工的部件具有高优先级），否则送装配车间装配。需要机器的订单的到达速度为每隔（40±10）小时一份，3 个部件生产的时间分别为：部件 1 为（20±5）小时，部件 2 为（15±5）小时，部件 3 为（25±10）小时；装配需要（25±10）小时，假设检验试装不需要时间。3 种部件需要返工的概率及时间如表 5.6 所示，试仿真完成 1000 份订单即生产 1000 台机器的运行情况。</p><table><caption>表 5.6　3 种部件需要返工的概率及时间</caption><tr><th>时间（小时）</th><th>0（即无须返工）</th><th>1</th><th>2</th><th>3</th></tr><tr><td>概率</td><td>0.85</td><td>0.04</td><td>0.08</td><td>0.03</td></tr></table></div>
-      <ol class="steps"><li>订单到达后把参数 PART 初始化为 0，<code>SPLIT 2,,PART</code> 生成总共 3 个事务，序号自动变为 1、2、3。</li><li>三个事务用 <code>P$PART</code> 间接选择各自车间、生产均值与半区间。</li><li>每次检验抽取返工时间 0/1/2/3 小时；非零时提高优先级并回原车间，完成后再次检验。</li><li>三个部件均通过后在 <code>ASSEMBLE 3</code> 合为一个订单事务，再进入装配车间。</li></ol>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_5_4.GPS · HOUR</span><button class="copy">COPY</button></div><pre><code>* Exercise 5.4 - three components, rework and final assembly; hour
-PRODMEAN   FUNCTION P$PART,D3
-1,20/2,15/3,25
-PRODHALF   FUNCTION P$PART,D3
-1,5/2,5/3,10
-REWTIME    FUNCTION RN2,D4
+      <ol class="steps"><li>订单先令 P1=0，再用 <code>SPLIT 2,,,1</code> 形成同一装配集的 3 个事务并依次得到部件号 1、2、3。</li><li><code>FN_2</code> 由 P1 查生产均值，<code>FN_3</code> 查半区间并存入 P2；设施编号也直接使用 P1，因此三个部件分别占用 1、2、3 号车间。</li><li><code>GATHER 3</code> 让同一订单的三个部件全部到齐后再一起检验。P3 从 <code>FN_1</code> 取得返工时间；P3&gt;0 才执行高优先级返工。</li><li><code>ASSEMBLE 3</code> 把检验/返工完成的三个事务合成一个，再延时 25±10 小时完成最终装配。</li></ol>
+      <div class="codebox"><div class="codehead"><span>EXERCISE_5_4.GPS · HOUR · 按参考答案</span><button class="copy">COPY</button></div><pre><code>FN_1       FUNCTION  RN1,D4
 0.85,0/0.89,1/0.97,2/1,3
-
-           GENERATE 40,10
-           ASSIGN   PART,0
-           SPLIT    2,,PART
-
-* Initial production in workshop 1, 2 or 3.
-PRODUCE    ASSIGN   HALF,FN$PRODHALF
-           QUEUE    P$PART
-           SEIZE    P$PART
-           DEPART   P$PART
-           ADVANCE  FN$PRODMEAN,P$HALF
-           RELEASE  P$PART
-
-* Inspection/fit takes no time. A nonzero draw means rework.
-INSPECT    ASSIGN   REWORKTIME,FN$REWTIME
-           TEST E   P$REWORKTIME,0,REWORK
-           PRIORITY 0
-           TRANSFER ,READY
-
-* Rework uses the original workshop and has high priority.
-REWORK     PRIORITY 1
-           QUEUE    P$PART
-           SEIZE    P$PART
-           DEPART   P$PART
-           ADVANCE  P$REWORKTIME
-           RELEASE  P$PART
-           TRANSFER ,INSPECT
-
-* All three good components become one machine order.
-READY      ASSEMBLE 3
-           QUEUE    Q_ASSEMBLY
-           SEIZE    ASSEMBLY
-           DEPART   Q_ASSEMBLY
-           ADVANCE  25,10
-           RELEASE  ASSEMBLY
+FN_2       FUNCTION  P1,D3
+1,20/2,15/3,25
+FN_3       FUNCTION  P1,D3
+1,5/2,5/3,10
+           GENERATE  40,10
+           ASSIGN    1,0
+           SPLIT     2,,,1
+           ASSIGN    2,FN$FN_3
+           SEIZE     P1
+           ADVANCE   FN$FN_2,P2
+           RELEASE   P1
+           GATHER    3
+           ASSIGN    3,FN$FN_1
+           TEST G    P3,0,NXT
+           PRIORITY  1
+           SEIZE     P1
+           ADVANCE   P3
+           RELEASE   P1
+NXT        ASSEMBLE  3
+           ADVANCE   25,10
            TERMINATE 1
-
-           START    1000</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR1, FR2, FR3</td><td>三个部件生产车间利用率。</td></tr><tr><td>FR$ASSEMBLY</td><td>装配车间利用率。</td></tr><tr><td>N$REWORK</td><td>进入返工分支的总次数。</td></tr><tr><td>END TIME</td><td>完成 1000 台机器的仿真时间。</td></tr></table>
+           START     1000</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>FR1 / FR2 / FR3</td><td>三个部件生产车间（含返工占用）的利用率。</td></tr><tr><td>ASSEMBLY SET / GATHER 等待</td><td>可检查同一订单的三个部件汇合与装配同步。</td></tr><tr><td>END TIME</td><td>完成 1000 台机器时的仿真时钟。</td></tr></table>
     </section>
 
     <section class="exercise" id="p57">
       <div class="exercise-title"><div class="exercise-no">5.7</div><div><h2>20 人铸造厂的 EDD 订单调度</h2><p>逐组件随机确定类型和质量，计算订单总铸造时间，再按绝对到期时间升序排队。</p></div></div>
       <div class="problem"><div class="problem-head"><span>教材原题</span><small>CHAPTER 05 · EXERCISE 5.7</small></div><p>一个铸造厂雇佣了 20 个员工处理订单，订单以服从均值为 1 小时的指数分布到达。每个订单包含 6～24 个组件（均匀分布），订单中可出现 8 种组件，出现的概率是相互独立的，且这 8 种组件出现的概率及其质量如表 5.7 所示。</p><table><caption>表 5.7　8 种组件出现的概率及其质量</caption><tr><th>类型</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr><tr><td>概率</td><td>0.05</td><td>0.08</td><td>0.12</td><td>0.25</td><td>0.20</td><td>0.15</td><td>0.10</td><td>0.05</td></tr><tr><td>质量（千克）</td><td>3</td><td>6</td><td>11</td><td>20</td><td>28</td><td>35</td><td>42</td><td>50</td></tr></table><p>假设铸造的时间是每个组件平均每千克为 2 分钟外加 15 分钟的固定准备时间。每份订单由一位员工独立完成，且在完成一份订单前，不会处理另外的订单。订单调度处理规则采用最早到期优先的策略。订单到期的时间是依照总的铸造时间加上流动时间，这个流动时间在 40～160 小时之间均匀分布。仿真运行 600 小时，统计在到期时间内完成的订单数量及延迟的时间分布。</p></div>
       <table><tr><th>组件类型</th><th>概率</th><th>质量 kg</th><th>每件铸造时间 min</th></tr><tr><td>1</td><td>0.05</td><td>3</td><td>21</td></tr><tr><td>2</td><td>0.08</td><td>6</td><td>27</td></tr><tr><td>3</td><td>0.12</td><td>11</td><td>37</td></tr><tr><td>4</td><td>0.25</td><td>20</td><td>55</td></tr><tr><td>5</td><td>0.20</td><td>28</td><td>71</td></tr><tr><td>6</td><td>0.15</td><td>35</td><td>85</td></tr><tr><td>7</td><td>0.10</td><td>42</td><td>99</td></tr><tr><td>8</td><td>0.05</td><td>50</td><td>115</td></tr></table>
-      <div class="formula">DUE = AC1 + TOTAL_CAST + Uniform(2400, 9600) minutes</div>
-      <p>到达时若 20 名员工尚有空闲者，订单直接开工；否则进入用户链 <code>EDD</code>，按 <code>P$DUE</code> 从小到大排序。服务事务优先级提高为 1，保证同一时刻先完成并从 EDD 链取出最早到期订单，再处理普通优先级的新到达。</p>
-      <div class="codebox"><div class="codehead"><span>EXERCISE_5_7.GPS · MINUTE</span><button class="copy">COPY</button></div><pre><code>* Exercise 5.7 - foundry with 20 workers and EDD scheduling; minute
-CTYPE      FUNCTION RN3,D8
-0.05,1/0.13,2/0.25,3/0.50,4/0.70,5/0.85,6/0.95,7/1,8
-CASTTIME   FUNCTION P$TYPE,D8
-1,21/2,27/3,37/4,55/5,71/6,85/7,99/8,115
+      <div class="formula">P5（到期时刻）= AC1（到达时刻）+ P3（总铸造时间）+ P4（流动时间）</div>
+      <p>参考答案让到达事务具有优先级 2。若 20 名员工全忙，订单用 <code>LINK QUE,P5</code> 按绝对到期时刻进入用户链；每当一个员工释放，<code>UNLINK QUE,ADD_NEXT,1</code> 取出链首的一个最早到期订单。</p>
+      <div class="callout warn"><strong>以参考答案为准：</strong>截图把流动时间写成 240～960 分钟，即 4～16 小时；这与题面 40～160 小时不同。下面按截图保留 <code>FN_FDD</code> 的 240/960。</div>
+      <div class="codebox"><div class="codehead"><span>EXERCISE_5_7.GPS · MINUTE · 按参考答案</span><button class="copy">COPY</button></div><pre><code>FN_WEIGHT  FUNCTION  RN1,D8
+0.05,3/0.13,6/0.25,11/0.5,20/0.7,28/0.85,35/0.95,42/1,50
+FN_FDD     FUNCTION  RN2,C2
+0,240/1,960
 
-V_LATE     VARIABLE AC1-P$DUE
-T_DELAY    TABLE V$V_LATE,60,60,160
-STAFF      STORAGE 20
+YG         STORAGE   20
+V_FIN      VARIABLE  AC1-P5
+T_FIN      TABLE     V$V_FIN,0,50,20
 
-           GENERATE (EXPONENTIAL(1,0,60))
-           ASSIGN   COUNT,(6+RN2@19)
-           ASSIGN   TOTAL,0
+           GENERATE  (EXPONENTIAL(1,0,60)),,,,2
+           ASSIGN    1,(6+RN1@19)
+NXT        ASSIGN    2,FN$FN_WEIGHT
+           ASSIGN    3+,(P2#2+15)
+           LOOP      1,NXT
 
-* Sample every component independently and accumulate the order time.
-ONE_COMP   ASSIGN   TYPE,FN$CTYPE
-           ASSIGN   TOTAL+,FN$CASTTIME
-           LOOP     COUNT,ONE_COMP
-
-* Flow allowance is uniform from 40 to 160 hours = 2400..9600 min.
-           ASSIGN   DUE,(AC1+P$TOTAL+2400+RN4@7201)
-
-* If a worker is free, start now; otherwise join the EDD user chain.
-           TEST L   S$STAFF,20,WAIT_EDD
-           TRANSFER ,WORK
-WAIT_EDD   LINK     EDD,P$DUE
-
-WORK       ENTER    STAFF
-           PRIORITY 1
-           ADVANCE  P$TOTAL
-           LEAVE    STAFF
-
-* Start at most one earliest-due waiting order for the released worker.
-           UNLINK   EDD,WORK,1
-
-* Count on-time orders and collect positive delay times.
-           TEST G   V$V_LATE,0,ON_TIME
-           SAVEVALUE LATE+,1
-           TABULATE T_DELAY
+           ASSIGN    4,FN$FN_FDD
+           ASSIGN    5,(AC1+P3+P4)
+           TEST E    S$YG,20,ADD_NEXT
+           LINK      QUE,P5
+ADD_NEXT   ENTER     YG
+           PRIORITY  1,BU
+           ADVANCE   P3
+           LEAVE     YG
+           UNLINK    QUE,ADD_NEXT,1
+           TEST G    V$V_FIN,0,ACC
+           SAVEVALUE FAIL+,1
+           TABULATE  T_FIN
            TERMINATE
-ON_TIME    SAVEVALUE ONTIME+,1
+ACC        SAVEVALUE SUC+,1
            TERMINATE
 
-* 600 hours = 36000 minutes.
-           GENERATE 36000,,,1,127
+           GENERATE  36000
            TERMINATE 1
-           START    1</code></pre></div>
-      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>X$ONTIME</td><td>600 小时内完成且未超过到期时间的订单数。</td></tr><tr><td>X$LATE</td><td>完成但延迟的订单数。</td></tr><tr><td>T_DELAY</td><td>延迟时间分布，单位为分钟；除以 60 可换算为小时。</td></tr><tr><td>USERCHAIN EDD</td><td>EDD 等待链的平均长度、最大长度和平均等待时间。</td></tr><tr><td>SR$STAFF</td><td>20 名员工的总体利用率。</td></tr></table>
-      <div class="callout warn"><strong>统计边界：</strong>600 小时终点仍在加工或等待的订单不属于“已完成订单”，因此不会进入 ONTIME/LATE；这与题目“仿真运行 600 小时”相符。</div>
+           START     1</code></pre></div>
+      <table class="report"><tr><th>读取项</th><th>说明</th></tr><tr><td>X$SUC</td><td>在到期时刻内完成的订单数。</td></tr><tr><td>X$FAIL</td><td>到期后才完成的订单数。</td></tr><tr><td>T_FIN</td><td>延迟时间分布；起点 0、组宽 50 分钟、20 组。</td></tr><tr><td>USERCHAIN QUE</td><td>EDD 等待链的平均长度、最大长度和平均等待时间。</td></tr><tr><td>SR$YG</td><td>20 名员工的总体利用率。</td></tr></table>
+      <div class="callout warn"><strong>统计边界：</strong>600 小时终点仍在加工或等待的订单尚未进入 SUC/FAIL，因此两个计数只覆盖已经完成的订单。</div>
     </section>
 
     <section id="check">
